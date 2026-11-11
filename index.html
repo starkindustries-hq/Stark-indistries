@@ -50,7 +50,8 @@ a{color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:29;background:var(--bg)}
 
 /* ---------------- FILM ---------------- */
-.film{position:relative;height:720vh}
+.film{position:relative;height:100vh;height:100svh}
+#cards,#montage,.grid-lines,.film .ov,.tcode,#bar{display:none!important}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate}
 #fx{position:absolute;inset:0;width:100%;height:100%;display:block}
 .vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(0,0,0,.55) 100%)}
@@ -160,8 +161,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 #orbitHost.ready .ld{opacity:0}
 @keyframes orbIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 html.orbit-open,html.orbit-open body{overflow:hidden}
-.rv{transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
-.js .rv:not(.in){opacity:0;transform:translateY(40px)}
+.rv{transition:none}
+.js .rv:not(.in){opacity:1;transform:none}
 
 
 /* ---------------- SCROLL DOWN screen ---------------- */
@@ -216,6 +217,18 @@ html.orbit-open,html.orbit-open body{overflow:hidden}
 .sj-sha{font-size:10.5px;word-break:break-all;color:#86dbff;opacity:.85}
 @keyframes sjBlink{50%{opacity:.35}}
 @media (max-width:820px){.sj-app .sj-appgrid{grid-template-columns:1fr}.sj-feats{grid-template-columns:1fr}}
+
+
+/* faq */
+.faq{border-top:1px solid var(--hair)}
+.faq details{border-bottom:1px solid var(--hair)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font-size:clamp(17px,2vw,21px);font-weight:500;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--dim)}
+.faq details[open] summary::after{content:"×";color:var(--track)}
+.faq p{margin:0 0 20px;color:var(--dim);max-width:62ch}
+/* site guide: ready questions only, no typing */
+.sjg-in{display:none!important}
 
 /* ===== Site guide Jarvis ===== */
 .sjg-fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:400;display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;border:1px solid rgba(134,219,255,.4);background:rgba(6,10,20,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink);font:600 13px/1 var(--sans);letter-spacing:.08em;cursor:pointer;box-shadow:0 12px 40px -12px rgba(134,219,255,.55);transition:transform .25s,opacity .3s}
@@ -298,7 +311,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 
     <!-- scene labels (data-a / data-b = scroll range) -->
         <div id="sdown" aria-hidden="true">
-      <div class="sd-top"><span class="mono">Stark Industries</span><span class="names">a film by <b>Binit</b> &amp; <b>Mridul</b></span></div>
+      <div class="sd-top"><span class="mono">Stark Industries</span><span class="names">built by <b>Binit</b> &amp; <b>Mridul</b></span></div>
       <div class="sd-cue"><div class="mouse"></div><div class="chev"><i></i><i></i><i></i></div><span class="mono">the story starts below</span></div>
     </div>
     <div class="ov cap" data-a=".045" data-b=".09">every idea starts as a dot.</div>
@@ -349,7 +362,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
   <div class="wrap">
     <div class="sec-h rv">
       <h2>The network. <span>Pick a site.</span></h2>
-      <p>Everything Stark Industries builds launches from here. Two are live. One more is in the lab.</p>
+      <p>Everything Stark Industries builds launches from here. Three are live. More are in the lab.</p>
     </div>
     <div class="net">
       <a class="card orbit rv" href="#stark-orbit" data-orbit="">
@@ -373,11 +386,11 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
         <div class="row mono"><span>SITE 02</span><span style="color:#5dffa8">● AVAILABLE NOW</span></div>
         <div><span style="font-size:22px;font-weight:600;letter-spacing:-.02em">J.A.R.V.I.S. for Android</span><p>Hands-free voice assistant for your phone, in English or Hindi. Free download.</p><span class="sj-cardbtn">Download Jarvis app ↓</span></div>
       </a>
-      <div class="card lock rv" tabindex="0">
-        <span class="tag">site_03 · classified</span>
-        <div class="row mono"><span>SITE 03</span><span>SI-3146-C</span></div>
-        <div><span class="r">CODENAME</span><p>Reserved for the next build.</p></div>
-      </div>
+      <a class="card lock rv" href="ultron/" style="background:radial-gradient(circle at 85% 20%,rgba(255,42,61,.24),transparent 50%),var(--bg-2)">
+        <span class="tag">site_03 · live · en/hi</span>
+        <div class="row mono"><span>SITE 03</span><span style="color:#ff2a3d">● ONLINE</span></div>
+        <div><span style="font-size:22px;font-weight:600;letter-spacing:.14em">ULTRON</span><p>A colder, sharper AI with its own site. It sees, reads and remembers.</p></div>
+      </a>
     </div>
   </div>
 </section>
@@ -421,6 +434,21 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 </section>
 
 <!-- ================= CREDITS ================= -->
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-h"><h2>FAQ. <span>Quick answers.</span></h2></div>
+    <div class="faq">
+      <details><summary>Who is Stark Industries?</summary><p>Two 15-year-old founders from India, Binit and Mridul, building websites, apps and AI tools. Our mission is to make the world's tech more reliable.</p></details>
+      <details><summary>Is everything free?</summary><p>Yes. Stark Orbit, Ultron and the Jarvis app are all free.</p></details>
+      <details><summary>How do I get the Jarvis app?</summary><p>Tap “Get Jarvis app” at the top right, then “Download Jarvis.apk”. Inside Instagram, tap “Open in Chrome” first. Android 8 or newer.</p></details>
+      <details><summary>What is the Jarvis on this website?</summary><p>A simple guide that only knows this site. Tap “Ask Jarvis” and pick a question. For your personal work, like calls and apps, get the Jarvis app.</p></details>
+      <details><summary>How is Ultron different from Jarvis?</summary><p>Ultron is a separate site with its own personality: colder, sharper and a little menacing. It can look through your camera and remember what you tell it.</p></details>
+      <details><summary>Is my data stored anywhere?</summary><p>No account, no tracking. Anything you save stays on your own device.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="credits" id="founders">
   <div class="wrap">
     <div class="credit rv"><span class="mono">Founded &amp; built by</span><h3>Binit</h3><p>Founder · 15 · India</p></div>
@@ -433,7 +461,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <section class="end">
   <div>
     <div class="lockup rv"><svg class="hexi"><use href="#hx"/></svg>STARK INDUSTRIES</div>
-    <p class="rv">The first site is live. More are on the way.</p>
+    <p class="rv">Three sites are live. More are on the way.</p>
     <a class="go rv" style="display:inline-flex" href="#stark-orbit" data-orbit="">Launch Stark Orbit →</a>
   </div>
   <div class="foot"><div class="wrap mono"><span>© 2026 Stark Industries</span><span>Binit · Mridul · India</span></div></div>
@@ -550,7 +578,7 @@ const cards=$$('.fc').map(el=>({el,x:+el.dataset.x,y:+el.dataset.y,w:+el.dataset
 cards.forEach(c=>{c.el.style.width=c.w+'px';c.el.style.height=c.h+'px';c.el.style.marginLeft=-c.w/2+'px';c.el.style.marginTop=-c.h/2+'px'});
 const gl=$('#gl'),mont=$('#montage'),mfs=$$('.mf');
 const SCN=['OPEN','EARTH','FOUNDERS','ONE','MISSION','NETWORK','MONTAGE','END'];
-function filmP(){const r=film.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))}
+function filmP(){return 0} /* scroll film removed: only the chat-box intro stays */
 const sdown=$('#sdown');let introDone=RM;
 function scenes(p){
   sdown.classList.toggle('show',introDone&&p<.012);
@@ -629,9 +657,9 @@ if('IntersectionObserver' in window){new IntersectionObserver(([e])=>vis=e.isInt
 function loop(t){T=t;
   if(document.documentElement.classList.contains('orbit-open')){requestAnimationFrame(loop);return}
   if(vis){const p=filmP();render(p);scenes(p);if(p>.58&&p<.76)mini.draw(t)}
-  if(visNet)big.draw(t);
+  if(visNet&&!big.done){big.draw(0);big.done=1}
   requestAnimationFrame(loop)}
-function sizeAll(force){resize(force);mini.size();big.size()}
+function sizeAll(force){resize(force);mini.size();big.size();big.done=0}
 sizeAll(true);
 addEventListener('resize',()=>{clearTimeout(sizeAll.t);sizeAll.t=setTimeout(sizeAll,150)});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>buildText());
@@ -758,9 +786,12 @@ const I=[
  {id:'moon',k:['moon','to the moon','chand','chaand','चाँद','चांद','चंद्रमा'],act:'ladder',a:()=>[L('Taking you to the Moon section. Keep scrolling, every pixel takes you higher.','चाँद वाले हिस्से पर ले चल रहा हूँ। स्क्रॉल करते रहिए, हर पिक्सेल आपको ऊपर ले जाएगा।')]},
  {id:'orbit',k:['stark orbit','स्टार्क ऑर्बिट','orbit','satellite','satellites','space','open orbit','सैटेलाइट','ऑर्बिट','अंतरिक्ष'],w:-1,act:'orbit',a:()=>[L('Launching Stark Orbit: live tracker, satellite directory, orbit lab, a trip to the Moon and the Academy quiz.','स्टार्क ऑर्बिट लॉन्च कर रहा हूँ: लाइव ट्रैकर, सैटेलाइट डायरेक्टरी, ऑर्बिट लैब, चाँद तक का सफ़र और अकादमी क्विज़।')]},
  {id:'app',k:['apk','android','download','install','mobile app','phone app','the app','play store','app','call','calls','whatsapp','open youtube','personal','hands free','handsfree','busy mode','reminder','alarm','ऐप','एपीके','डाउनलोड','कॉल','फ़ोन','फोन'],a:()=>[L('That\'s a job for the Jarvis Android app, not this website guide. The app listens offline for \"Jarvis\", calls people instantly, opens and controls any app, reads your messages and handles calls in Busy Mode, in English or Hindi. You can download it right here on this page.','यह काम जार्विस एंड्रॉइड ऐप का है, इस वेबसाइट गाइड का नहीं। ऐप ऑफ़लाइन \"जार्विस\" सुनता है, तुरंत कॉल करता है, कोई भी ऐप खोलकर चलाता है, आपके मैसेज पढ़ता है और बिज़ी मोड में कॉल संभालता है, अंग्रेज़ी या हिंदी में। इसे इसी पेज से डाउनलोड कर सकते हैं।'),[B.app()]]},
- {id:'fulljarvis',k:['full jarvis','jarvis assistant','voice assistant','talk to jarvis','gemini','chat jarvis','open jarvis','बड़ा जार्विस','पूरा जार्विस'],act:'fulljarvis',a:()=>[L('Opening the full Jarvis assistant inside Stark Orbit. It chats about anything with Google Gemini, in English or Hindi.','स्टार्क ऑर्बिट में पूरा जार्विस असिस्टेंट खोल रहा हूँ। यह गूगल जेमिनी से किसी भी विषय पर बात करता है, अंग्रेज़ी या हिंदी में।')]},
+ {id:'fulljarvis_off',k:['full jarvis','jarvis assistant','voice assistant','talk to jarvis','gemini','chat jarvis','open jarvis','बड़ा जार्विस','पूरा जार्विस'],act:'fulljarvis',a:()=>[L('Opening the full Jarvis assistant inside Stark Orbit. It chats about anything with Google Gemini, in English or Hindi.','स्टार्क ऑर्बिट में पूरा जार्विस असिस्टेंट खोल रहा हूँ। यह गूगल जेमिनी से किसी भी विषय पर बात करता है, अंग्रेज़ी या हिंदी में।')]},
+ {id:'ultron',k:['ultron','अल्ट्रॉन'],w:3,a:()=>[L('Ultron is site three: a colder, sharper AI with its own website. It can look through your camera and remember what you tell it.','अल्ट्रॉन तीसरी साइट है: एक ठंडा, तेज़ AI, जिसकी अपनी वेबसाइट है। यह कैमरे से देख सकता है और आपकी बातें याद रखता है।'),[{l:L('Open Ultron →','अल्ट्रॉन खोलें →'),f:()=>{location.href='ultron/'}}]]},
+ {id:'free',k:['free','price','cost','paid','money','pay','फ्री','मुफ़्त','मुफ्त','पैसे','कीमत'],w:2,a:()=>[L('Yes, everything here is free: Stark Orbit, Ultron and the Jarvis Android app.','हाँ, यहाँ सब कुछ फ्री है: स्टार्क ऑर्बिट, अल्ट्रॉन और जार्विस एंड्रॉइड ऐप।'),[B.app()]]},
+ {id:'whatorbit',k:['what is stark orbit','stark orbit kya','स्टार्क ऑर्बिट क्या'],w:6,a:()=>[L('Stark Orbit is site one: a live satellite tracker with a satellite directory, an orbit lab, a scroll trip to the Moon and the Academy quiz with XP and badges.','स्टार्क ऑर्बिट पहली साइट है: लाइव सैटेलाइट ट्रैकर, सैटेलाइट डायरेक्टरी, ऑर्बिट लैब, चाँद तक का स्क्रॉल सफ़र, और XP व बैज वाला अकादमी क्विज़।'),[B.orbit()]]},
  {id:'tour',k:['tour','show me around','walkthrough','walk me','guide me','take me around','explore','ghumao','ghuma do','dikhao','टूर','घुमाओ','घुमा दो','दिखाओ'],act:'tour',a:()=>[L('Starting the tour. Sit back. Scroll or tap anywhere to stop it.','टूर शुरू कर रहा हूँ। आराम से देखिए। रोकने के लिए कहीं भी स्क्रॉल या टैप करें।')]},
- {id:'how',k:['how to use','what do i do','how does this work','scroll','film','video','kaise','कैसे','फ़िल्म','फिल्म'],a:()=>[L('Just scroll. The page plays a short film as you go down, then shows the network of sites. Tap any site to open it, or ask me to take you there.','बस स्क्रॉल कीजिए। नीचे जाते हुए एक छोटी फ़िल्म चलती है, फिर साइटों का नेटवर्क दिखता है। किसी भी साइट पर टैप करें, या मुझसे कहें, मैं ले चलूँगा।'),[B.tour()]]},
+ {id:'how',k:['how to use','what do i do','how does this work','scroll','film','video','kaise','कैसे','फ़िल्म','फिल्म'],a:()=>[L('Just scroll down to see the network of sites. Tap any site to open it, or tap a question here and I\'ll take you there.','बस नीचे स्क्रॉल कीजिए, साइटों का नेटवर्क दिखेगा। किसी भी साइट पर टैप करें, या यहाँ कोई सवाल चुनें, मैं ले चलूँगा।'),[B.tour()]]},
  {id:'tech',k:['how was it built','how is it made','tech stack','built with','made with','technology','code','coding','किस से बना','टेक्नोलॉजी','कोड'],a:()=>[L('The site is hand-built: GSAP animation, Lenis smooth scrolling and a canvas particle engine. Stark Orbit calculates satellite positions right in your browser.','यह साइट हाथ से बनी है: GSAP एनिमेशन, Lenis स्मूद स्क्रॉल और कैनवस पार्टिकल इंजन। स्टार्क ऑर्बिट सैटेलाइट की पोज़ीशन आपके ब्राउज़र में ही निकालता है।')]},
  {id:'privacy',k:['privacy','private','my data','data','safe','secure','security','tracking','cookies','सुरक्षित','प्राइवेसी','डेटा'],a:()=>[L('This guide runs entirely in your browser. No sign-up, no tracking, and nothing you type is sent to a server. If you use the mic, your browser\'s own speech service does the listening.','यह गाइड पूरी तरह आपके ब्राउज़र में चलता है। न साइन-अप, न ट्रैकिंग, और आप जो लिखते हैं वह किसी सर्वर पर नहीं जाता। माइक इस्तेमाल करने पर आपके ब्राउज़र की अपनी स्पीच सर्विस सुनती है।')]},
  {id:'contact',k:['contact','email','reach you','collab','collaborate','hire','work with','संपर्क','ईमेल'],go:'#founders',a:()=>[L('There\'s no public contact form yet. More sites, and a way to reach the team, are on the way.','अभी कोई कॉन्टैक्ट फ़ॉर्म नहीं है। और साइटें, और टीम से जुड़ने का तरीका, जल्द आ रहे हैं।')]},
@@ -829,8 +860,8 @@ function paint(){
 }
 function chips(){
   const c=$('.sjg-chips');c.innerHTML='';
-  const list=lang==='hi'?['स्टार्क इंडस्ट्रीज़ क्या है?','टूर कराओ','किसने बनाया?','स्टार्क ऑर्बिट खोलो','क्विज़ शुरू करो','ऐप कहाँ मिलेगा?']
-    :['What is Stark Industries?','Give me a tour','Who built this?','Open Stark Orbit','Start the quiz','Where is the app?'];
+  const list=lang==='hi'?['स्टार्क इंडस्ट्रीज़ क्या है?','किसने बनाया?','टूर कराओ','स्टार्क ऑर्बिट क्या है?','स्टार्क ऑर्बिट खोलो','क्विज़ शुरू करो','लाइव ट्रैकर','चाँद तक चलो','जार्विस ऐप कहाँ मिलेगा?','अल्ट्रॉन क्या है?','क्या यह फ्री है?','तुम कौन हो?']
+    :['What is Stark Industries?','Who built this?','Give me a tour','What is Stark Orbit?','Open Stark Orbit','Start the quiz','Live tracker','Take me to the Moon','Get the Jarvis app','What is Ultron?','Is it free?','Who are you?'];
   for(const q of list){const b=D.createElement('button');b.type='button';b.className='sjg-chip';b.textContent=q;b.onclick=()=>ask(q);c.appendChild(b)}
 }
 function add(text,who,btns){
@@ -906,9 +937,8 @@ function tour(){
   const filmEnd=()=>{const f=D.getElementById('film');return f?top('#film')+f.offsetHeight-innerHeight:0};
   const steps=[
     {y:()=>0,d:1.2,t:L('Welcome to Stark Industries headquarters. Every site the team builds launches from here.','स्टार्क इंडस्ट्रीज़ हेडक्वार्टर में आपका स्वागत है। टीम की हर साइट यहीं से लॉन्च होती है।')},
-    {y:()=>filmEnd()*0.42,d:9,t:L('This opening film tells the story. Two founders, Binit and Mridul, fifteen, from India. One lab.','यह फ़िल्म कहानी बताती है। दो संस्थापक, बिनीत और मृदुल, पंद्रह साल, भारत से। एक लैब।')},
-    {y:()=>filmEnd(),d:9,t:L('One mission: make the world\'s tech more reliable.','एक मिशन: दुनिया की टेक्नोलॉजी को ज़्यादा भरोसेमंद बनाना।')},
-    {y:()=>top('#network')-20,d:2.2,t:L('This is the network. Stark Orbit and Jarvis are live. Site three is still classified.','यह नेटवर्क है। स्टार्क ऑर्बिट और जार्विस लाइव हैं। तीसरी साइट अभी सीक्रेट है।')},
+    {y:()=>0,d:0,t:L('Two founders, Binit and Mridul, fifteen, from India. One mission: make the world\'s tech more reliable.','दो संस्थापक, बिनीत और मृदुल, पंद्रह साल, भारत से। एक मिशन: दुनिया की टेक्नोलॉजी को ज़्यादा भरोसेमंद बनाना।')},
+    {y:()=>top('#network')-20,d:2.2,t:L('This is the network. Stark Orbit, the Jarvis app and Ultron are all live.','यह नेटवर्क है। स्टार्क ऑर्बिट, जार्विस ऐप और अल्ट्रॉन, तीनों लाइव हैं।')},
     {y:()=>top('#app')-20,d:2,t:L('And this is the Jarvis Android app, the one that does your personal work hands-free. Download it right here.','और यह है जार्विस एंड्रॉइड ऐप, जो आपका निजी काम बिना छुए करता है। इसे यहीं से डाउनलोड करें।')},
     {y:()=>top('#founders')-20,d:2,t:L('Founded and built by Binit, with his partner Mridul.','बिनीत ने बनाया, अपने पार्टनर मृदुल के साथ।')},
     {y:()=>null,d:0,t:L('That\'s the tour. Say "open Stark Orbit" or "start the quiz" whenever you\'re ready.','टूर पूरा हुआ। जब चाहें, बोलिए "स्टार्क ऑर्बिट खोलो" या "क्विज़ शुरू करो"।')},
