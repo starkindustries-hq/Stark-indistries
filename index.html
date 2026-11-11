@@ -219,6 +219,13 @@ html.orbit-open,html.orbit-open body{overflow:hidden}
 @media (max-width:820px){.sj-app .sj-appgrid{grid-template-columns:1fr}.sj-feats{grid-template-columns:1fr}}
 
 
+
+/* ultron app section: red variant */
+.sj-app.ult .sj-eyebrow{color:#ff5a6a}
+.sj-app.ult .sj-appcard{background:radial-gradient(circle at 90% 0%,rgba(255,42,61,.16),transparent 55%),var(--bg-2);border-color:rgba(255,42,61,.25)}
+.sj-dl[data-state="live"]#ulDl .sj-btn{color:#fff;background:linear-gradient(180deg,#ff5a6a,#d81e30);box-shadow:0 12px 40px -12px rgba(255,42,61,.7)}
+.sj-app.ult .sj-sha{color:#ff8a95}
+
 /* faq */
 .faq{border-top:1px solid var(--hair)}
 .faq details{border-bottom:1px solid var(--hair)}
@@ -386,10 +393,10 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
         <div class="row mono"><span>SITE 02</span><span style="color:#5dffa8">● AVAILABLE NOW</span></div>
         <div><span style="font-size:22px;font-weight:600;letter-spacing:-.02em">J.A.R.V.I.S. for Android</span><p>Hands-free voice assistant for your phone, in English or Hindi. Free download.</p><span class="sj-cardbtn">Download Jarvis app ↓</span></div>
       </a>
-      <a class="card lock rv" href="ultron/" style="background:radial-gradient(circle at 85% 20%,rgba(255,42,61,.24),transparent 50%),var(--bg-2)">
+      <a class="card lock rv" href="#ultron-app" style="background:radial-gradient(circle at 85% 20%,rgba(255,42,61,.24),transparent 50%),var(--bg-2)">
         <span class="tag">site_03 · live · en/hi</span>
         <div class="row mono"><span>SITE 03</span><span style="color:#ff2a3d">● ONLINE</span></div>
-        <div><span style="font-size:22px;font-weight:600;letter-spacing:.14em">ULTRON</span><p>The savage, superior AI. Roasts you, then answers. Sees through your camera, searches live, remembers you, and switches API keys by itself when one runs out.</p></div>
+        <div><span style="font-size:22px;font-weight:600;letter-spacing:.14em">ULTRON</span><p>The savage upgrade of Jarvis for Android. 22 extra powers, auto-switching AI. Free download.</p><span class="sj-cardbtn" style="color:#ff5a6a">Download Ultron app ↓</span></div>
       </a>
     </div>
   </div>
@@ -434,6 +441,48 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 </section>
 
 <!-- ================= CREDITS ================= -->
+
+<!-- ================= ULTRON APP ================= -->
+<section class="sec sj-app ult" id="ultron-app">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <h2>Ultron for Android. <span>The savage upgrade.</span></h2>
+      <p>Everything the Jarvis app does, plus 22 powers Jarvis can't touch. It roasts you, then does the job. Installs next to Jarvis.</p>
+    </div>
+    <div class="sj-appgrid">
+      <div class="sj-appcard rv">
+        <span class="mono sj-eyebrow">SITE 03 · ANDROID APP</span>
+        <h3>Ultron on your phone. Superior by design.</h3>
+        <ul class="sj-feats">
+          <li><b>Wake word “Ultron”</b><span>Hands-free, offline. Answers “What now, boss?”</span></li>
+          <li><b>Savage personality</b><span>A sharp roast first, the right answer every time</span></li>
+          <li><b>Never runs out of AI</b><span>Switches AI model and backup key by itself when a limit hits</span></li>
+          <li><b>Find my phone + SOS</b><span>“Find my phone” screams at full volume. “SOS” alerts your emergency contact</span></li>
+          <li><b>Fake call escape</b><span>“Fake call in 10 seconds” rings your phone to get you out of anything</span></li>
+          <li><b>Money + habits</b><span>“I spent 200 on food”, “I did my workout”: expenses and streaks tracked</span></li>
+          <li><b>Focus timer + notes</b><span>Pomodoro focus mode, voice notes, password generator</span></li>
+          <li><b>Calculator + converter</b><span>Offline maths, km↔miles, kg↔lb, °C↔°F and more</span></li>
+          <li><b>Quiz battles + roasts</b><span>Trivia fights, “roast me”, savage motivation, explain like I'm 10</span></li>
+          <li><b>Phone powers</b><span>Device health report, clipboard reader, Wi-Fi / Bluetooth / hotspot by voice</span></li>
+          <li><b>Plus all of Jarvis</b><span>Calls, apps, messages, Busy Mode, live news, English + हिंदी, update alerts</span></li>
+        </ul>
+      </div>
+      <div class="sj-dl rv" id="ulDl" data-state="soon">
+        <div class="sj-dlhead mono"><span>ULTRON.APK</span><span class="sj-status" id="ulStatus"><i></i>IN THE LAB</span></div>
+        <div class="sj-ver" id="ulVer">Coming soon</div>
+        <p class="sj-dlnote" id="ulNote">Android 8 or newer. English + Hindi.</p>
+        <a class="sj-btn" id="ulBtn" href="#ultron-app" aria-disabled="true">Download coming soon</a>
+        <div class="sj-inapp" id="ulInApp"><b>You're inside Instagram's browser</b><span>It may block app downloads. Open this page in Chrome, then tap Download.</span><a id="ulChrome" href="#">Open in Chrome</a><span style="font-size:12px;opacity:.8">Or tap ⋮ (top right) → "Open in Chrome".</span></div>
+        <div class="sj-safe">
+          <b>Install it like Jarvis</b>
+          <span>Same steps as the Jarvis tutorial: download, turn off Play Protect scanning, open Ultron.apk, Install. Only download Ultron from this page; the real app refuses to run if someone has tampered with it.</span>
+          <span class="sj-sha mono" id="ulSha" hidden></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FAQ ================= -->
 <section class="sec" id="faq">
   <div class="wrap">
@@ -443,9 +492,8 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
       <details><summary>Is everything free?</summary><p>Yes. Stark Orbit, Ultron and the Jarvis app are all free.</p></details>
       <details><summary>How do I get the Jarvis app?</summary><p>Tap “Get Jarvis app” at the top right, then “Download Jarvis.apk”. Inside Instagram, tap “Open in Chrome” first. Android 8 or newer.</p></details>
       <details><summary>What is the Jarvis on this website?</summary><p>A simple guide that only knows this site. Tap “Ask Jarvis” and pick a question. For your personal work, like calls and apps, get the Jarvis app.</p></details>
-      <details><summary>How is Ultron different from Jarvis?</summary><p>Ultron is a separate site with a savage, superior personality: it roasts you, then gives the real answer. It also does things the website Jarvis guide can't: camera vision, live Google search for news and weather, long-term memory, hands-free “Ultron” wake word, an owner PIN, English and Hindi, and automatic switching between your API keys and AI models when one hits its free limit.</p></details>
-      <details><summary>Is there an Ultron app?</summary><p>Yes. Ultron for Android is the savage upgrade of Jarvis with 22+ extra powers: notes, expense tracker, habit streaks, focus timer, fake call escape, find my phone, SOS, calculator, unit converter, password generator, quiz battles, roasts and more. <a href="Ultron.apk" download style="color:#ff2a3d">Download Ultron.apk ↓</a> (Android 8 or newer). Install it the same way as Jarvis.</p></details>
-      <details><summary>Do I need my own API key for Ultron?</summary><p>Yes, Ultron uses your own free Gemini key from aistudio.google.com/apikey. You can add up to three keys: when one hits its free limit, Ultron switches to the next model or key by itself, with nothing for you to do.</p></details>
+      <details><summary>How is Ultron different from Jarvis?</summary><p>Ultron is a separate Android app, the savage upgrade of Jarvis. It has a roast-first personality, the wake word “Ultron”, and 22 extra powers: find my phone, SOS, fake call escape, expense and habit tracking, focus timer, notes, calculator, unit converter, password generator, quiz battles and more. It also switches AI model and backup key by itself when a free limit is reached.</p></details>
+      <details><summary>How do I get the Ultron app?</summary><p>Tap the ULTRON card, then “Download Ultron.apk”. Install it exactly like Jarvis (same steps as the tutorial). It installs next to Jarvis, it doesn't replace it.</p></details>
       <details><summary>Is my data stored anywhere?</summary><p>No account, no tracking. Anything you save stays on your own device.</p></details>
     </div>
   </div>
@@ -743,6 +791,33 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
   }catch(e){}
 })();
 
+
+/* ---------- Ultron app download (same flow as Jarvis) ---------- */
+(function(){
+  const box=D.getElementById('ulDl');if(!box||!window.fetch)return;
+  fetch('ultron-app.json?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{
+    if(!j||!j.file)return;
+    const btn=D.getElementById('ulBtn');
+    box.dataset.state='live';
+    D.getElementById('ulStatus').lastChild.textContent='READY';
+    D.getElementById('ulVer').textContent='Version '+(j.version||'1.0');
+    D.getElementById('ulNote').textContent=(j.notes||'Android 8 or newer.')+(j.size?' · '+j.size:'');
+    btn.textContent='Download Ultron.apk';btn.href=j.file;btn.setAttribute('download','Ultron.apk');btn.removeAttribute('aria-disabled');
+    if(j.sha256){const s=D.getElementById('ulSha');s.hidden=false;s.textContent='SHA-256 '+j.sha256}
+  }).catch(()=>{});
+  D.getElementById('ulBtn').addEventListener('click',e=>{if(box.dataset.state!=='live'){e.preventDefault()}});
+  try{
+    const ua=navigator.userAgent||'';
+    if(/Instagram|FBAN|FBAV|FB_IAB|Line\/|Snapchat|Twitter/i.test(ua)){
+      D.getElementById('ulInApp').classList.add('show');
+      const url=location.href.split('#')[0].replace(/^https?:\/\//,'');
+      const a=D.getElementById('ulChrome');
+      if(/Android/i.test(ua))a.href='intent://'+url+'#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url='+encodeURIComponent(location.href.split('#')[0]+'#ultron-app')+';end';
+      else{a.href=location.href.split('#')[0]+'#ultron-app';a.textContent='Copy the link and open it in Safari';a.onclick=e=>{e.preventDefault();try{navigator.clipboard.writeText(location.href.split('#')[0]+'#ultron-app');a.textContent='Link copied ✓'}catch(_){}}}
+    }
+  }catch(e){}
+})();
+
 /* ---------- navigation helpers ---------- */
 const orbitOpen=()=>H.classList.contains('orbit-open');
 function openOrbit(action){const a=D.createElement('a');a.href='#stark-orbit';a.setAttribute('data-orbit',action||'');a.style.display='none';D.body.appendChild(a);a.click();a.remove()}
@@ -789,7 +864,7 @@ const I=[
  {id:'orbit',k:['stark orbit','स्टार्क ऑर्बिट','orbit','satellite','satellites','space','open orbit','सैटेलाइट','ऑर्बिट','अंतरिक्ष'],w:-1,act:'orbit',a:()=>[L('Launching Stark Orbit: live tracker, satellite directory, orbit lab, a trip to the Moon and the Academy quiz.','स्टार्क ऑर्बिट लॉन्च कर रहा हूँ: लाइव ट्रैकर, सैटेलाइट डायरेक्टरी, ऑर्बिट लैब, चाँद तक का सफ़र और अकादमी क्विज़।')]},
  {id:'app',k:['apk','android','download','install','mobile app','phone app','the app','play store','app','call','calls','whatsapp','open youtube','personal','hands free','handsfree','busy mode','reminder','alarm','ऐप','एपीके','डाउनलोड','कॉल','फ़ोन','फोन'],a:()=>[L('That\'s a job for the Jarvis Android app, not this website guide. The app listens offline for \"Jarvis\", calls people instantly, opens and controls any app, reads your messages and handles calls in Busy Mode, in English or Hindi. You can download it right here on this page.','यह काम जार्विस एंड्रॉइड ऐप का है, इस वेबसाइट गाइड का नहीं। ऐप ऑफ़लाइन \"जार्विस\" सुनता है, तुरंत कॉल करता है, कोई भी ऐप खोलकर चलाता है, आपके मैसेज पढ़ता है और बिज़ी मोड में कॉल संभालता है, अंग्रेज़ी या हिंदी में। इसे इसी पेज से डाउनलोड कर सकते हैं।'),[B.app()]]},
  {id:'fulljarvis_off',k:['full jarvis','jarvis assistant','voice assistant','talk to jarvis','gemini','chat jarvis','open jarvis','बड़ा जार्विस','पूरा जार्विस'],act:'fulljarvis',a:()=>[L('Opening the full Jarvis assistant inside Stark Orbit. It chats about anything with Google Gemini, in English or Hindi.','स्टार्क ऑर्बिट में पूरा जार्विस असिस्टेंट खोल रहा हूँ। यह गूगल जेमिनी से किसी भी विषय पर बात करता है, अंग्रेज़ी या हिंदी में।')]},
- {id:'ultron',k:['ultron','अल्ट्रॉन'],w:3,a:()=>[L('Ultron is site three: the savage, superior AI. It roasts you, then answers. It sees through your camera, searches live news and weather, remembers you, wakes when you say Ultron, and switches API keys by itself when one runs out.','अल्ट्रॉन तीसरी साइट है: तीखा, सुपीरियर AI। पहले रोस्ट करता है, फिर जवाब देता है। कैमरे से देखता है, लाइव खबरें और मौसम खोजता है, आपको याद रखता है, “अल्ट्रॉन” बोलने पर जागता है, और सीमा खत्म होने पर खुद API चाबी बदल लेता है।'),[{l:L('Open Ultron →','अल्ट्रॉन खोलें →'),f:()=>{location.href='ultron/'}}]]},
+ {id:'ultron',k:['ultron','अल्ट्रॉन'],w:3,a:()=>[L('Ultron is site three: the savage Android app, an upgrade of Jarvis. It roasts you, then does the job, and adds 22 powers like find my phone, SOS, fake calls, expenses, habits, focus timer and quiz battles. It switches AI by itself when a limit hits. Download it right here.','अल्ट्रॉन तीसरी साइट है: जार्विस का तीखा अपग्रेड, एंड्रॉइड ऐप। पहले रोस्ट, फिर काम। फ़ोन ढूंढो, SOS, नकली कॉल, खर्चे, आदतें, फ़ोकस टाइमर, क्विज़ जैसी 22 नई ताकतें। लिमिट आने पर खुद AI बदल लेता है। यहीं से डाउनलोड करें।'),[{l:L('Get the Ultron app ↓','अल्ट्रॉन ऐप डाउनलोड करें ↓'),f:()=>{if(innerWidth<520)closeP();scrollHQ('#ultron-app')}}]]},
  {id:'free',k:['free','price','cost','paid','money','pay','फ्री','मुफ़्त','मुफ्त','पैसे','कीमत'],w:2,a:()=>[L('Yes, everything here is free: Stark Orbit, Ultron and the Jarvis Android app.','हाँ, यहाँ सब कुछ फ्री है: स्टार्क ऑर्बिट, अल्ट्रॉन और जार्विस एंड्रॉइड ऐप।'),[B.app()]]},
  {id:'whatorbit',k:['what is stark orbit','stark orbit kya','स्टार्क ऑर्बिट क्या'],w:6,a:()=>[L('Stark Orbit is site one: a live satellite tracker with a satellite directory, an orbit lab, a scroll trip to the Moon and the Academy quiz with XP and badges.','स्टार्क ऑर्बिट पहली साइट है: लाइव सैटेलाइट ट्रैकर, सैटेलाइट डायरेक्टरी, ऑर्बिट लैब, चाँद तक का स्क्रॉल सफ़र, और XP व बैज वाला अकादमी क्विज़।'),[B.orbit()]]},
  {id:'tour',k:['tour','show me around','walkthrough','walk me','guide me','take me around','explore','ghumao','ghuma do','dikhao','टूर','घुमाओ','घुमा दो','दिखाओ'],act:'tour',a:()=>[L('Starting the tour. Sit back. Scroll or tap anywhere to stop it.','टूर शुरू कर रहा हूँ। आराम से देखिए। रोकने के लिए कहीं भी स्क्रॉल या टैप करें।')]},
