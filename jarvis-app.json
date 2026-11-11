@@ -1,7 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.6",
+  "version": "1.0.10",
   "size": "87MB",
-  "sha256": "692a7a2cd192d6355f33e0d2ea60d22c047ffd7a52e9af50cdde9e00349d10bd",
-  "notes": "Android 8 or newer. English + Hindi. Includes offline voice."
+  "sha256": "dd03c8062ca25db385f445c06af74dfdf48dc836c9e4c35a626615c8bc746a92",
+  "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
+  "whats_new": "Sharper hearing, faster replies, and update alerts so you always get the newest Jarvis."
 }

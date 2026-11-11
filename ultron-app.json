@@ -1,7 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "size": "87MB",
-  "sha256": "98519e1486fd9d703909f3f258091d032065119e7daaf4bcc737bb76db66d3c3",
-  "notes": "Android 8 or newer. English + Hindi."
+  "sha256": "f04b694be9952a9a853d67cdec84a2d19b795537f9fba17847b5a3cb3450ad38",
+  "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
+  "whats_new": "Sharper hearing, faster savage replies, automatic backup-key switching and update alerts."
 }
