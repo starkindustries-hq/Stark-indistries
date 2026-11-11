@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://starkindustries-hq.github.io/Stark-indistries/sitemap.xml
