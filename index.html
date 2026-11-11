@@ -44,6 +44,8 @@ a{color:inherit}
 .top .mono{pointer-events:auto}
 .top a.mono{text-decoration:none;border:1px solid var(--hair);padding:7px 12px;border-radius:999px;color:var(--ink);transition:background .2s}
 .top a.mono:hover{background:rgba(255,255,255,.08)}
+.sj-btns{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.top a.sj-getu{border-color:rgba(255,42,61,.6);color:#ffc9ce;background:rgba(255,42,61,.14);box-shadow:0 0 24px -6px rgba(255,42,61,.6)}
 .top a.sj-get{border-color:rgba(134,219,255,.55);color:#bfeaff;background:rgba(61,200,255,.12);box-shadow:0 0 24px -6px rgba(61,200,255,.6)}
 #bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:1px;width:0;background:var(--ink);z-index:31;opacity:.6}
 .tcode{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:30;pointer-events:none;font-variant-numeric:tabular-nums}
@@ -295,7 +297,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <div id="bar"></div>
 <div class="top"><div class="wrap">
   <a class="mark" href="#top"><svg class="hexi"><use href="#hx"/></svg>STARK INDUSTRIES</a>
-  <a class="mono sj-get" href="#app">Get Jarvis app ↓</a>
+  <span class="sj-btns"><a class="mono sj-get" href="#app">Get Jarvis app ↓</a><a class="mono sj-getu" href="#ultron-app">Get Ultron app ↓</a></span>
 </div></div>
 <div class="tcode mono" id="tc">00:00:00:00 · SC 01</div>
 
