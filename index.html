@@ -389,12 +389,14 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
         <span class="mono sj-eyebrow">SITE 02 · ANDROID APP</span>
         <h3>Hands-free Jarvis on your phone</h3>
         <ul class="sj-feats">
-          <li><b>Call by name</b><span>"Jarvis, call Mom" dials straight away</span></li>
-          <li><b>Opens any app</b><span>YouTube, WhatsApp, camera, settings…</span></li>
-          <li><b>Controls your phone</b><span>Back, home, scroll, torch, volume, alarms</span></li>
-          <li><b>Busy Mode</b><span>Answers your calls, says you're busy, texts back</span></li>
-          <li><b>English + हिंदी</b><span>One app. Calls answered in your language.</span></li>
-          <li><b>Always listening</b><span>Say "Jarvis" from the background, screen off</span></li>
+          <li><b>Always listening, offline</b><span>Say "Jarvis" anytime. No beep, no internet needed</span></li>
+          <li><b>Instant calls by name</b><span>"Jarvis, call Mom" dials immediately</span></li>
+          <li><b>Controls any app</b><span>"Tap subscribe", "type hello", multi-step tasks by AI</span></li>
+          <li><b>Reads your messages</b><span>"Who messaged me?" and hands-free read-outs</span></li>
+          <li><b>Busy Mode</b><span>Rejects calls and texts the caller you're busy</span></li>
+          <li><b>Live AI brain</b><span>News, weather, scores via Google. Remembers what you tell it</span></li>
+          <li><b>Film-style voices</b><span>JARVIS, FRIDAY, IRON LEGION and ULTRON with suit effect</span></li>
+          <li><b>English + हिंदी</b><span>One app, offline Hindi voice too. Owner PIN protected</span></li>
         </ul>
       </div>
       <div class="sj-dl rv" id="sjDl" data-state="soon">
@@ -739,7 +741,7 @@ const I=[
  {id:'lab',k:['orbit lab','lab','physics','altitude','orbital speed','how fast','gravity','लैब','भौतिकी','रफ़्तार','गति'],act:'lab',a:()=>[L('Opening the Orbit Lab. Pick a height and it works out how fast you must fly to stay in orbit.','ऑर्बिट लैब खोल रहा हूँ। ऊँचाई चुनिए, और यह बताएगा कि ऑर्बिट में रहने के लिए कितनी तेज़ उड़ना होगा।')]},
  {id:'moon',k:['moon','to the moon','chand','chaand','चाँद','चांद','चंद्रमा'],act:'ladder',a:()=>[L('Taking you to the Moon section. Keep scrolling, every pixel takes you higher.','चाँद वाले हिस्से पर ले चल रहा हूँ। स्क्रॉल करते रहिए, हर पिक्सेल आपको ऊपर ले जाएगा।')]},
  {id:'orbit',k:['stark orbit','स्टार्क ऑर्बिट','orbit','satellite','satellites','space','open orbit','सैटेलाइट','ऑर्बिट','अंतरिक्ष'],w:-1,act:'orbit',a:()=>[L('Launching Stark Orbit: live tracker, satellite directory, orbit lab, a trip to the Moon and the Academy quiz.','स्टार्क ऑर्बिट लॉन्च कर रहा हूँ: लाइव ट्रैकर, सैटेलाइट डायरेक्टरी, ऑर्बिट लैब, चाँद तक का सफ़र और अकादमी क्विज़।')]},
- {id:'app',k:['apk','android','download','install','mobile app','phone app','the app','play store','app','call','calls','whatsapp','open youtube','personal','hands free','handsfree','busy mode','reminder','alarm','ऐप','एपीके','डाउनलोड','कॉल','फ़ोन','फोन'],a:()=>[L('That\'s a job for the Jarvis Android app, not this website guide. The app calls people by name, opens your apps, controls your phone hands-free and can answer calls in Busy Mode, in English or Hindi. You can download it right here on this page.','यह काम जार्विस एंड्रॉइड ऐप का है, इस वेबसाइट गाइड का नहीं। ऐप नाम से कॉल करता है, आपके ऐप खोलता है, बिना छुए फ़ोन चलाता है और बिज़ी मोड में कॉल का जवाब देता है, अंग्रेज़ी या हिंदी में। इसे इसी पेज से डाउनलोड कर सकते हैं।'),[B.app()]]},
+ {id:'app',k:['apk','android','download','install','mobile app','phone app','the app','play store','app','call','calls','whatsapp','open youtube','personal','hands free','handsfree','busy mode','reminder','alarm','ऐप','एपीके','डाउनलोड','कॉल','फ़ोन','फोन'],a:()=>[L('That\'s a job for the Jarvis Android app, not this website guide. The app listens offline for \"Jarvis\", calls people instantly, opens and controls any app, reads your messages and handles calls in Busy Mode, in English or Hindi. You can download it right here on this page.','यह काम जार्विस एंड्रॉइड ऐप का है, इस वेबसाइट गाइड का नहीं। ऐप ऑफ़लाइन \"जार्विस\" सुनता है, तुरंत कॉल करता है, कोई भी ऐप खोलकर चलाता है, आपके मैसेज पढ़ता है और बिज़ी मोड में कॉल संभालता है, अंग्रेज़ी या हिंदी में। इसे इसी पेज से डाउनलोड कर सकते हैं।'),[B.app()]]},
  {id:'fulljarvis',k:['full jarvis','jarvis assistant','voice assistant','talk to jarvis','gemini','chat jarvis','open jarvis','बड़ा जार्विस','पूरा जार्विस'],act:'fulljarvis',a:()=>[L('Opening the full Jarvis assistant inside Stark Orbit. It chats about anything with Google Gemini, in English or Hindi.','स्टार्क ऑर्बिट में पूरा जार्विस असिस्टेंट खोल रहा हूँ। यह गूगल जेमिनी से किसी भी विषय पर बात करता है, अंग्रेज़ी या हिंदी में।')]},
  {id:'tour',k:['tour','show me around','walkthrough','walk me','guide me','take me around','explore','ghumao','ghuma do','dikhao','टूर','घुमाओ','घुमा दो','दिखाओ'],act:'tour',a:()=>[L('Starting the tour. Sit back. Scroll or tap anywhere to stop it.','टूर शुरू कर रहा हूँ। आराम से देखिए। रोकने के लिए कहीं भी स्क्रॉल या टैप करें।')]},
  {id:'how',k:['how to use','what do i do','how does this work','scroll','film','video','kaise','कैसे','फ़िल्म','फिल्म'],a:()=>[L('Just scroll. The page plays a short film as you go down, then shows the network of sites. Tap any site to open it, or ask me to take you there.','बस स्क्रॉल कीजिए। नीचे जाते हुए एक छोटी फ़िल्म चलती है, फिर साइटों का नेटवर्क दिखता है। किसी भी साइट पर टैप करें, या मुझसे कहें, मैं ले चलूँगा।'),[B.tour()]]},

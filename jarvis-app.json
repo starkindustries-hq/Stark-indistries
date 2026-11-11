@@ -1,7 +1,7 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.2",
-  "size": "68KB",
-  "sha256": "6900e8ad7c47601797e87aa774a1915b7ec57ffcf7bf4ea653d093099272ce7f",
-  "notes": "Android 8 or newer. English + Hindi."
+  "version": "1.0.5",
+  "size": "87MB",
+  "sha256": "225ffe77a7b9cc0d4d0ad649011c88ce9e436878961aa3d27154ec743d96cb77",
+  "notes": "Android 8 or newer. English + Hindi. Includes offline voice."
 }
