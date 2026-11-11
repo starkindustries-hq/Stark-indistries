@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "size": "87MB",
-  "sha256": "6383705c04137ab94b0b72302a75bc4366b6a783b1f13f87c764d5011eaff36c",
+  "sha256": "fd206451960298a147d572ca67231ecb730882f317176dd809cd86f4c87dbf9d",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "No Google pop-up, faster and more accurate hearing, quicker replies."
+  "whats_new": "Doesn't hear its own voice any more, speaks faster, no Google pop-up."
 }

@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "size": "87MB",
-  "sha256": "2c40f5d870c9a6eaa35afa84dfa8f455a9a74b47f6d51cd3223b38eb407b4da5",
+  "sha256": "1fc04e3a0fa03e6ba7a54718f859ba9788420b08f8a9dfaa2679b815b76a8f4d",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "No Google pop-up, faster and more accurate hearing, savage quick replies."
+  "whats_new": "Doesn't hear its own voice any more, speaks faster, no Google pop-up."
 }
