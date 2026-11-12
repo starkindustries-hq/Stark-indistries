@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "size": "90MB",
-  "sha256": "0df2cb67bf46b093e9819a2a2981562799f451219565ecad4f607426257f62e2",
+  "sha256": "f295895773b7789874f69c239160ec3b996a840380db47cc53955a54104912cd",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: Ultron now runs on the same engine as Jarvis — same hearing, speed and features, answers first with a short savage touch, clear deep voice. Plus real caller names, stronger hearing, instant roast battles, Analyse mode, Shut down mode and the animated background."
+  "whats_new": "New: caller sensor - Ultron reads the caller's name straight off the ringing screen (keep Ultron on in Accessibility) and says it once. Ultron runs on the Jarvis engine: same hearing and speed, clear deep voice, instant roast battles."
 }
