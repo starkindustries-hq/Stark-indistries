@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.33",
+  "version": "1.0.39",
   "size": "90MB",
-  "sha256": "cfafbfda0c4f5471c92b5a25729d14a2bb46e58a7662b00fd403cb6df66198f4",
+  "sha256": "2ec8a78a0bc9d71c43627b8468e842a299ab066fe3292cb10fe04de74ed9af21",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Listens first, then talks: replies the moment you finish speaking (even in a noisy room), stops instantly when you say something new, and never repeats an old answer. Bold new red background with a glowing aura, and the new red Stark orb logo."
+  "whats_new": "New: they can SEE — say \"what is this?\" on any screen, or share photos and videos. Analyse mode, Announcer (says the caller's name first and who texted), smart answer/reject by voice, several jobs in one sentence, faster replies with voice first then text, stronger hearing, a how-to guide, and Stark Doctor: complain and it fixes itself and learns."
 }

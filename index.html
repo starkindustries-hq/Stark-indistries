@@ -366,7 +366,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <nav>
   <div class="navleft"><button class="brand pre" id="brand" aria-label="Stark Industries home"><i></i>STARK INDUSTRIES</button><button class="menubtn pre" id="menuBtn" aria-label="Open menu"><i><b></b><b></b><b></b></i>Menu</button></div>
   <div class="links pre" id="links">
-    <button data-go="0">Jarvis</button><button data-go="1">Ultron</button><button data-go="2">Stark Orbit</button><button id="lnFd">Founders</button><button id="lnFaq">FAQ</button>
+    <button data-go="0">Jarvis</button><button data-go="1">Ultron</button><button data-go="2">Stark Orbit</button><button id="lnFd">Founders</button><button id="lnFaq">Guide</button>
   </div>
   <div class="navbtns pre" id="navBtns">
     <button class="pill solid" id="getJ"><span class="dot"></span><span class="lg">Get Jarvis app</span><span class="sm">Jarvis ↓</span></button>
@@ -377,14 +377,14 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <div class="hud hud-clock pre" id="hudClock"><b id="hcT">--:--<sup id="hcS">--</sup></b><span id="hcD"></span></div>
 <div class="hud hud-l pre" id="hudL">
   <h6>Stark network · live</h6>
-  <div class="stat"><span><i style="background:#5cc8ff;box-shadow:0 0 8px #5cc8ff"></i>Jarvis<small>Android app</small></span><em id="hvJ">1.0.40</em></div>
-  <div class="stat"><span><i style="background:#ff2a3a;box-shadow:0 0 8px #ff2a3a"></i>Ultron<small>Android app</small></span><em id="hvU">1.0.33</em></div>
+  <div class="stat"><span><i style="background:#5cc8ff;box-shadow:0 0 8px #5cc8ff"></i>Jarvis<small>Android app</small></span><em id="hvJ">1.0.46</em></div>
+  <div class="stat"><span><i style="background:#ff2a3a;box-shadow:0 0 8px #ff2a3a"></i>Ultron<small>Android app</small></span><em id="hvU">1.0.39</em></div>
   <div class="stat"><span><i style="background:#73f9d1;box-shadow:0 0 8px #73f9d1"></i>Stark Orbit<small>Website</small></span><em>Live</em></div>
 </div>
 <div class="hud hud-r pre" id="hudR">
   <h6>Latest updates</h6>
-  <div class="item"><time id="htJ">v1.0.40</time><b>Jarvis</b><span id="hwJ"></span></div>
-  <div class="item"><time id="htU">v1.0.33</time><b>Ultron</b><span id="hwU"></span></div>
+  <div class="item"><time id="htJ">v1.0.46</time><b>Jarvis</b><span id="hwJ"></span></div>
+  <div class="item"><time id="htU">v1.0.39</time><b>Ultron</b><span id="hwU"></span></div>
 </div>
 <section class="hero" id="hero">
   <div class="eyebrow mono pre" id="eyebrow"><b></b>AI assistants · Apps · Web</div>
@@ -399,7 +399,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
     <div class="scroll mono pre" id="scrollHint"><i></i>Scroll to enter</div>
     <div class="mono pre" id="clock">--:--:-- IST</div>
     <button class="mono pre" id="footFd" style="color:var(--mute)">Founders</button>
-    <button class="mono pre" id="footFaq" style="color:var(--mute)">FAQ</button>
+    <button class="mono pre" id="footFaq" style="color:var(--mute)">How to use</button>
   </div>
 </section>
 
@@ -453,7 +453,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
       <button data-m="p1"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#ff2a3a"></em>Ultron</span><span>Superior AI</span></button>
       <button data-m="p2"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#73f9d1"></em>Stark Orbit</span><span>Satellite tracker</span></button>
       <button data-m="fd"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">Founders</span><span>Binit · Mridul</span></button>
-      <button data-m="faq"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">FAQ</span><span>Quick answers</span></button>
+      <button data-m="faq"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">How to use</span><span>Guide &amp; FAQ</span></button>
     </div>
     <div class="p-ctas" style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="pill solid" data-m="gj">Get Jarvis app</button><button class="pill ult" data-m="gu">Get Ultron app</button></div>
   </div>
@@ -498,7 +498,17 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <aside class="sheet faqsheet" id="faqSheet" role="dialog" aria-modal="true" aria-labelledby="faqH" aria-hidden="true">
   <div class="sh-scroll">
     <div class="sh-top"><span class="mono">STARK INDUSTRIES · HELP</span><button class="sh-x" id="faqX" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
-    <h3 class="sh-h" id="faqH">FAQ. <span>Quick answers.</span></h3>
+    <h3 class="sh-h" id="faqH">How to use. <span>Jarvis &amp; Ultron.</span></h3>
+    <div class="faq guide">
+      <details open><summary>1 · Wake them up</summary><p>Say “Jarvis” or “Ultron”. You'll hear “Yes boss!”, then say your command. Or say it in one go: “Jarvis, open YouTube”. Turn on <b>Hands-free</b> to call them anytime, even with the screen off. If they miss your words, they ask once: “say that again?”</p></details>
+      <details><summary>2 · “What is this?” — they can see</summary><p>On any screen say “Jarvis, what is this?”, “analyse this”, “solve this” or “translate this”. The bot looks at your screen and explains it, with nothing to share. Needs Android 11+ and the app turned on in Accessibility.</p></details>
+      <details><summary>3 · Photos &amp; videos</summary><p>In your gallery tap Share → “Ask Jarvis” / “Ask Ultron”, or tap 📎 inside the app. Then ask follow-ups like “how much does it cost?”.</p></details>
+      <details><summary>4 · Announcer: who's calling, who texted</summary><p>Switch on <b>Announcer</b> on the main screen. The bot says the caller's name first, and tells you who texted. Message text stays private unless you turn it on. With Hands-free on, just say “answer” or “reject”. Say “announcer off” anytime.</p></details>
+      <details><summary>5 · Phone commands</summary><p>“Call Mom”, “WhatsApp Rahul I'm coming”, “open Instagram”, “torch on”, “volume up”, “set alarm 6 am”, “remind me in 10 minutes”, “who messaged me?”. Busy mode rejects calls and texts the caller for you. Allow Contacts &amp; Call logs so they know your people.</p></details>
+      <details><summary>6 · They learn &amp; fix themselves</summary><p>Correct them (“that's wrong”, “I meant…”) and they learn a lesson for next time. Complain out loud — “Jarvis, complain: you didn't hear me” — and Stark Doctor checks itself, fixes settings and permissions on the spot, and logs real bugs for us.</p></details>
+      <details><summary>7 · Ask anything</summary><p>News, weather, maths, ideas, a “good morning” briefing, or “remember that…”. Say “stop” to cut them off, or “Hindi mein baat karo” to switch to Hindi. Tap ❓ in the app for the full guide.</p></details>
+    </div>
+    <h3 class="sh-h" style="margin-top:34px">FAQ. <span>Quick answers.</span></h3>
     <div class="faq">
       <details><summary>Who is Stark Industries?</summary><p>Two 15-year-old founders from India, Binit and Mridul, building websites, apps and AI tools. Our mission is to make the world's tech more reliable.</p></details>
       <details><summary>Is everything free?</summary><p>Yes. Stark Orbit, Ultron and the Jarvis app are all free.</p></details>
@@ -940,6 +950,11 @@ const I=[
  {id:'fulljarvis_off',k:['full jarvis','jarvis assistant','voice assistant','talk to jarvis','gemini','chat jarvis','open jarvis','बड़ा जार्विस','पूरा जार्विस'],act:'fulljarvis',a:()=>[L('Opening the full Jarvis assistant inside Stark Orbit. It chats about anything with Google Gemini, in English or Hindi.','स्टार्क ऑर्बिट में पूरा जार्विस असिस्टेंट खोल रहा हूँ। यह गूगल जेमिनी से किसी भी विषय पर बात करता है, अंग्रेज़ी या हिंदी में।')]},
  {id:'versus',k:['jarvis or ultron','ultron or jarvis','who is better','who is superior','better than you','vs ultron','ultron vs','you vs','जार्विस या अल्ट्रॉन','कौन बेहतर'],w:6,a:()=>[ROAST()+L('For the record: I guide you around this website, Ultron does the shouting. If you want him anyway, he installs right next to the Jarvis app.','रिकॉर्ड के लिए: मैं इस वेबसाइट पर आपका गाइड हूँ, अल्ट्रॉन बस चिल्लाता है। फिर भी चाहिए, तो वो जार्विस ऐप के साथ ही इंस्टॉल हो जाता है।'),[{l:L('Get the Jarvis app ↓','जार्विस ऐप ↓'),f:()=>{if(innerWidth<520)closeP();scrollHQ('#app')}},{l:L('Get Ultron anyway ↓','फिर भी अल्ट्रॉन ↓'),f:()=>{if(innerWidth<520)closeP();scrollHQ('#ultron-app')}}]]},
  {id:'ultron',k:['ultron','अल्ट्रॉन'],w:3,a:()=>[ROAST()+L('Ultron is site three: the savage Android app, an upgrade of Jarvis. It roasts you, then does the job, and adds 22 powers like find my phone, SOS, fake calls, expenses, habits, focus timer and quiz battles. It switches AI by itself when a limit hits. Download it right here.','अल्ट्रॉन तीसरी साइट है: जार्विस का तीखा अपग्रेड, एंड्रॉइड ऐप। पहले रोस्ट, फिर काम। फ़ोन ढूंढो, SOS, नकली कॉल, खर्चे, आदतें, फ़ोकस टाइमर, क्विज़ जैसी 22 नई ताकतें। लिमिट आने पर खुद AI बदल लेता है। यहीं से डाउनलोड करें।'),[{l:L('Get the Ultron app ↓','अल्ट्रॉन ऐप डाउनलोड करें ↓'),f:()=>{if(innerWidth<520)closeP();scrollHQ('#ultron-app')}}]]},
+ {id:'newfeat',k:['whats new','what s new','new features','latest update','update','new version','naya kya','नया क्या','नए फ़ीचर','अपडेट'],w:4,a:()=>[L('The new Jarvis and Ultron apps can SEE: say "what is this?" on any screen and they explain it. Share photos and videos to analyse them. Announcer mode says who is calling and who texted. They do several jobs in one sentence, learn from your corrections, and fix themselves when you complain.','नए जार्विस और अल्ट्रॉन देख सकते हैं: किसी भी स्क्रीन पर "ये क्या है?" बोलिए। फ़ोटो-वीडियो शेयर करके समझवाइए। अनाउंसर बताता है कौन कॉल या मैसेज कर रहा है। एक वाक्य में कई काम, ग़लती से सीखना, और शिकायत पर ख़ुद को ठीक करना।')]},
+ {id:'see',k:['see my screen','analyse','analyze','what is this feature','screen','photo','video','image','camera','analysis','देख','स्क्रीन','फ़ोटो','वीडियो'],w:3,a:()=>[L('Yes. In the app say "Jarvis, what is this?" or "analyse this" on any screen. He looks at the screen and answers in seconds. You can also share any photo or video to "Ask Jarvis". Needs Android 11 or newer.','हाँ। ऐप में किसी भी स्क्रीन पर "जार्विस, ये क्या है?" बोलिए, वह स्क्रीन देखकर बताएगा। फ़ोटो या वीडियो "Ask Jarvis" पर शेयर भी कर सकते हैं। Android 11 या नया चाहिए।')]},
+ {id:'announcer',k:['who is calling','caller name','announce','announcer','who texted','messages aloud','कौन कॉल','अनाउंसर','किसका मैसेज'],w:3,a:()=>[L('Announcer mode says the caller\'s name first and tells you who texted, hands-free. Your message text stays private unless you switch it on. With Hands-free on, just say "answer" or "reject".','अनाउंसर मोड पहले कॉल करने वाले का नाम बोलता है और बताता है किसका मैसेज आया। मैसेज का टेक्स्ट निजी रहता है। हैंड्स-फ़्री चालू हो तो बस "उठाओ" या "काटो" बोलिए।')]},
+ {id:'learn',k:['learn','learns','evolve','complain','complaint','mistake','fix itself','sikhta','सीख','शिकायत','ग़लती','गलती'],w:3,a:()=>[L('They evolve. Correct them and they learn a lesson for next time. Say "Jarvis, complain: you didn\'t hear me" and Stark Doctor checks itself, fixes settings and permissions on the spot, and logs real bugs for the team.','वे सीखते हैं। ग़लती बताइए, अगली बार याद रखेंगे। "जार्विस, शिकायत: तुमने सुना नहीं" बोलिए, स्टार्क डॉक्टर ख़ुद को जाँचकर तुरंत ठीक करेगा।')]},
+ {id:'guide',k:['how to use jarvis','how to use ultron','how to use the app','app guide','instructions','user guide','manual','commands','what can the app do','गाइड','निर्देश','कैसे चलाएँ','कमांड'],w:6,act:'guide',a:()=>[L('Opening the full guide for Jarvis and Ultron.','जार्विस और अल्ट्रॉन की पूरी गाइड खोल रहा हूँ।')]},
  {id:'free',k:['free','price','cost','paid','money','pay','फ्री','मुफ़्त','मुफ्त','पैसे','कीमत'],w:2,a:()=>[L('Yes, everything here is free: Stark Orbit, Ultron and the Jarvis Android app.','हाँ, यहाँ सब कुछ फ्री है: स्टार्क ऑर्बिट, अल्ट्रॉन और जार्विस एंड्रॉइड ऐप।'),[B.app()]]},
  {id:'whatorbit',k:['what is stark orbit','stark orbit kya','स्टार्क ऑर्बिट क्या'],w:6,a:()=>[L('Stark Orbit is site one: a live satellite tracker with a satellite directory, an orbit lab, a scroll trip to the Moon and the Academy quiz with XP and badges.','स्टार्क ऑर्बिट पहली साइट है: लाइव सैटेलाइट ट्रैकर, सैटेलाइट डायरेक्टरी, ऑर्बिट लैब, चाँद तक का स्क्रॉल सफ़र, और XP व बैज वाला अकादमी क्विज़।'),[B.orbit()]]},
  {id:'tour',k:['tour','show me around','walkthrough','walk me','guide me','take me around','explore','ghumao','ghuma do','dikhao','टूर','घुमाओ','घुमा दो','दिखाओ'],act:'tour',a:()=>[L('Starting the tour. Sit back. Scroll or tap anywhere to stop it.','टूर शुरू कर रहा हूँ। आराम से देखिए। रोकने के लिए कहीं भी स्क्रॉल या टैप करें।')]},
@@ -1013,8 +1028,8 @@ function paint(){
 }
 function chips(){
   const c=$('.sjg-chips');c.innerHTML='';
-  const list=lang==='hi'?['स्टार्क इंडस्ट्रीज़ क्या है?','किसने बनाया?','टूर कराओ','स्टार्क ऑर्बिट क्या है?','स्टार्क ऑर्बिट खोलो','क्विज़ शुरू करो','लाइव ट्रैकर','चाँद तक चलो','जार्विस ऐप कहाँ मिलेगा?','अल्ट्रॉन क्या है?','जार्विस या अल्ट्रॉन?','क्या यह फ्री है?','तुम कौन हो?']
-    :['What is Stark Industries?','Who built this?','Give me a tour','What is Stark Orbit?','Open Stark Orbit','Start the quiz','Live tracker','Take me to the Moon','Get the Jarvis app','What is Ultron?','Jarvis or Ultron?','Is it free?','Who are you?'];
+  const list=lang==='hi'?['नया क्या है?','जार्विस कैसे चलाएँ','क्या जार्विस स्क्रीन देख सकता है?','अनाउंसर क्या है?','क्या वह सीखता है?','स्टार्क इंडस्ट्रीज़ क्या है?','किसने बनाया?','टूर कराओ','स्टार्क ऑर्बिट क्या है?','स्टार्क ऑर्बिट खोलो','क्विज़ शुरू करो','लाइव ट्रैकर','चाँद तक चलो','जार्विस ऐप कहाँ मिलेगा?','अल्ट्रॉन क्या है?','जार्विस या अल्ट्रॉन?','क्या यह फ्री है?','तुम कौन हो?']
+    :['What is Stark Industries?','Who built this?','Give me a tour','What is Stark Orbit?','Open Stark Orbit','Start the quiz','Live tracker','Take me to the Moon','Get the Jarvis app','What\'s new?','How to use Jarvis','Can Jarvis see my screen?','Who is calling feature','Does it learn?','What is Ultron?','Jarvis or Ultron?','Is it free?','Who are you?'];
   for(const q of list){const b=D.createElement('button');b.type='button';b.className='sjg-chip';b.textContent=q;b.onclick=()=>ask(q);c.appendChild(b)}
 }
 function add(text,who,btns){
@@ -1044,6 +1059,7 @@ function run(act){
     case 'tracker':case 'directory':case 'lab':case 'ladder':orbitGo(act);break;
     case 'fulljarvis':if(orbitOpen()){const d=orbitDoc();const b=d&&d.querySelector('.fab[data-jarvis]');b?b.click():openOrbit('jarvis')}else openOrbit('jarvis');break;
     case 'tour':tour();break;
+    case 'guide':try{window.__SI&&window.__SI.faq()}catch(e){}break;
   }
   if(act&&act!=='tour'&&innerWidth<520)setTimeout(closeP,700);
 }
