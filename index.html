@@ -377,14 +377,14 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <div class="hud hud-clock pre" id="hudClock"><b id="hcT">--:--<sup id="hcS">--</sup></b><span id="hcD"></span></div>
 <div class="hud hud-l pre" id="hudL">
   <h6>Stark network · live</h6>
-  <div class="stat"><span><i style="background:#5cc8ff;box-shadow:0 0 8px #5cc8ff"></i>Jarvis<small>Android app</small></span><em id="hvJ">1.0.39</em></div>
-  <div class="stat"><span><i style="background:#ff2a3a;box-shadow:0 0 8px #ff2a3a"></i>Ultron<small>Android app</small></span><em id="hvU">1.0.32</em></div>
+  <div class="stat"><span><i style="background:#5cc8ff;box-shadow:0 0 8px #5cc8ff"></i>Jarvis<small>Android app</small></span><em id="hvJ">1.0.40</em></div>
+  <div class="stat"><span><i style="background:#ff2a3a;box-shadow:0 0 8px #ff2a3a"></i>Ultron<small>Android app</small></span><em id="hvU">1.0.33</em></div>
   <div class="stat"><span><i style="background:#73f9d1;box-shadow:0 0 8px #73f9d1"></i>Stark Orbit<small>Website</small></span><em>Live</em></div>
 </div>
 <div class="hud hud-r pre" id="hudR">
   <h6>Latest updates</h6>
-  <div class="item"><time id="htJ">v1.0.39</time><b>Jarvis</b><span id="hwJ"></span></div>
-  <div class="item"><time id="htU">v1.0.32</time><b>Ultron</b><span id="hwU"></span></div>
+  <div class="item"><time id="htJ">v1.0.40</time><b>Jarvis</b><span id="hwJ"></span></div>
+  <div class="item"><time id="htU">v1.0.33</time><b>Ultron</b><span id="hwU"></span></div>
 </div>
 <section class="hero" id="hero">
   <div class="eyebrow mono pre" id="eyebrow"><b></b>AI assistants · Apps · Web</div>
@@ -523,10 +523,10 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const P=[
  {name:'Jarvis',kind:'Voice assistant',col:[.36,.78,1],css:'#5cc8ff',turb:.9,ring:0,
   tag:'Your assistant, <em>hands-free.</em>',desc:'Say “Hey Jarvis” and it answers calls, opens apps and handles your phone — in English or Hindi, without you touching the screen.',
-  quote:[['me','You','Hey Jarvis'],['ai','Jarvis','Yes, boss?']],specs:[['Platform','Android 8+ (64-bit)'],['Languages','English · हिंदी'],['Version','1.0.39 · 90MB']],cta:'Get Jarvis app',app:'jarvis'},
+  quote:[['me','You','Hey Jarvis'],['ai','Jarvis','Yes, boss?']],specs:[['Platform','Android 8+ (64-bit)'],['Languages','English · हिंदी'],['Version','1.0.40 · 90MB']],cta:'Get Jarvis app',app:'jarvis'},
  {name:'Ultron',kind:'Superior AI',col:[1,.16,.22],css:'#ff2a3a',turb:1.9,ring:0,
   tag:'Same brain. <em>Zero patience.</em>',desc:'Jarvis’s darker evolution: a colder, sharper assistant with features Jarvis can’t touch — and a reply ready for anyone who calls him a butler.',
-  quote:[['me','You','Hey Jarvis.'],['ai','Ultron','My name is Ultron. That is a mistake you won’t make twice.']],specs:[['Platform','Android 8+ (64-bit)'],['Powers','22 more than Jarvis'],['Version','1.0.32 · 90MB']],cta:'Get Ultron app',app:'ultron'},
+  quote:[['me','You','Hey Jarvis.'],['ai','Ultron','My name is Ultron. That is a mistake you won’t make twice.']],specs:[['Platform','Android 8+ (64-bit)'],['Powers','22 more than Jarvis'],['Version','1.0.33 · 90MB']],cta:'Get Ultron app',app:'ultron'},
  {name:'Stark Orbit',kind:'Satellite tracker',col:[.45,.98,.82],css:'#73f9d1',turb:.7,ring:1,
   tag:'The sky, <em>live.</em>',desc:'Earth is just the beginning. See where satellites are right now, search the full catalog, work out orbits in the lab, then climb the Academy ranks.',
   quote:[['ai','Orbit','ISS · NOAA-19 · Hubble — tracking live']],specs:[['Platform','Web · any device'],['Inside','Tracker · Directory · Academy'],['Status','Live']],cta:'Launch Stark Orbit',url:'#stark-orbit'}
@@ -537,14 +537,14 @@ const SITE='https://starkindustries-hq.github.io/Stark-indistries/';
 const ON_SITE=/github\.io$/i.test(location.hostname);
 const BASE=ON_SITE?'':SITE;
 const APPS={
- jarvis:{json:'jarvis-app.json',file:'Jarvis.apk',version:'1.0.39',size:'90MB',sha256:'e5e1e955281758d1d15b0040f129fa9bbf8b60690815f7a64308dfa32e028bd4',
+ jarvis:{json:'jarvis-app.json',file:'Jarvis.apk',version:'1.0.40',size:'90MB',sha256:'65c12702578fb6eb396b477bc7e6f2608b06df38a9ba577b6e4678887d5d626c',
   notes:'Android 8 or newer (64-bit). English + Hindi. Includes offline voice.',
   eye:'SITE 02 · ANDROID APP',h:'Jarvis for Android. <span>The one that does the work.</span>',
   p:'The Jarvis on this website is a simple guide. It only knows this site. For your personal work, get the Jarvis app.',
   feats:[['Always listening, offline','Say "Jarvis" anytime. No beep, no internet needed'],['Instant calls by name','"Jarvis, call Mom" dials immediately'],['Controls any app','"Tap subscribe", "type hello", multi-step tasks by AI'],['Reads your messages','"Who messaged me?" and hands-free read-outs'],['Busy Mode','Rejects calls and texts the caller you\'re busy'],['Live AI brain','News, weather, scores via Google. Remembers what you tell it'],['English + हिंदी','One app, offline Hindi voice too. Owner PIN protected'],['Offline brain','Thinks on your phone with no internet, no key, no limits']],
   safeH:'Stay safe',safeT:'Only download Jarvis from this page. Copies shared on social media may be modified. The real app checks its own signature and refuses to run if someone has tampered with it.',
   hash:'#app',alt:['Want the savage upgrade?','Get Ultron app →','ultron']},
- ultron:{json:'ultron-app.json',file:'Ultron.apk',version:'1.0.32',size:'90MB',sha256:'3c1c32e5d32e7ce26f454202646f98d508b36a8c2b5d3d75b82d50409e9d0a22',
+ ultron:{json:'ultron-app.json',file:'Ultron.apk',version:'1.0.33',size:'90MB',sha256:'cfafbfda0c4f5471c92b5a25729d14a2bb46e58a7662b00fd403cb6df66198f4',
   notes:'Android 8 or newer (64-bit). English + Hindi. Includes offline voice.',
   eye:'SITE 03 · ANDROID APP',h:'Ultron for Android. <span>The savage upgrade.</span>',
   p:'Everything the Jarvis app does, plus 22 powers Jarvis can\'t touch. It roasts you, then does the job. Installs next to Jarvis.',

@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "size": "90MB",
-  "sha256": "e5e1e955281758d1d15b0040f129fa9bbf8b60690815f7a64308dfa32e028bd4",
+  "sha256": "65c12702578fb6eb396b477bc7e6f2608b06df38a9ba577b6e4678887d5d626c",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New look: Stark orb logo and a new glowing background. Fixed: Jarvis no longer answers its own voice (no more double replies), hears you more reliably, and the orb is lighter on your phone. \"Hey Jarvis\" → \"Yes boss!\""
+  "whats_new": "Listens first, then talks: replies the moment you finish speaking (even in a noisy room), stops instantly when you say something new, and never repeats an old answer. Bold new background with a glowing aura, and the new Stark orb logo."
 }
