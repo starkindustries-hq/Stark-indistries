@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "size": "87MB",
-  "sha256": "205dd631a9ace3d46dea03f79956dbbb8753c280d90d89242e910b150f781690",
+  "sha256": "3fda3f2d6644aa13c57f4141424dd40dc1a15ad22280eb532f5bcfdfdd239391",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "Alexa mode: instant wake chime, follow-up questions, shopping and to-do lists, routines, smart home. Goes silent the moment you pick up a call."
+  "whats_new": "New STARK-1 brain: starts talking instantly, reads any website you mention, and learns about you over time."
 }
