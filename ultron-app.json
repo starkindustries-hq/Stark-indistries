@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "size": "90MB",
-  "sha256": "76acdc95b058040db9024a7b85ac24518f4f72f17accc102fa70e16ffbbdda6f",
+  "sha256": "1ef7f5f6c43cba87b3c21408e8c2e1a32df9c82a84b6e6fc0c70c32a0b3df27e",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Fixed: no more \"busy\" errors (new Gemini brain), hears your full sentence, faster replies, reminders (\"remind me to ... at 6 PM\"), no repeated \"Yes boss\"."
+  "whats_new": "Instant: \"Okay boss\" and opens apps right away, commands like open YouTube / torch on / volume up work offline with no waiting, stops listening faster, better offline hearing."
 }

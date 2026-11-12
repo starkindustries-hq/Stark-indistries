@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.30",
+  "version": "1.0.34",
   "size": "90MB",
-  "sha256": "fc7f0c90df0fee477925e8bf2e4855afac413026fe97e001edfadac9a9257f29",
+  "sha256": "ceda91ef36e6b96f01d9a09391bcb7d2b0989b824bcb4861c756b4668e230be9",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Fixed: no more \"busy\" errors (new Gemini brain), hears your full sentence, faster replies, reminders (\"remind me to ... at 6 PM\"), no repeated \"Yes boss\"."
+  "whats_new": "Instant: \"Okay boss\" and opens apps right away, commands like open YouTube / torch on / volume up work offline with no waiting, stops listening faster, better offline hearing."
 }
