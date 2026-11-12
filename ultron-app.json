@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.39",
+  "version": "1.0.41",
   "size": "90MB",
-  "sha256": "2ec8a78a0bc9d71c43627b8468e842a299ab066fe3292cb10fe04de74ed9af21",
+  "sha256": "3575775f03ad50aa06ef5230449103dec96353f71f39115ddbf9d71469036ba0",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: they can SEE — say \"what is this?\" on any screen, or share photos and videos. Analyse mode, Announcer (says the caller's name first and who texted), smart answer/reject by voice, several jobs in one sentence, faster replies with voice first then text, stronger hearing, a how-to guide, and Stark Doctor: complain and it fixes itself and learns."
+  "whats_new": "New: FRIDAY — unlock Combined mode and Jarvis + Ultron merge into FRIDAY (green interface, 'Friday' wake word). Cinematic opening animation, Analyse-mode switch on the home screen, smarter hearing (no more 'say that again' loops or wrong calls), plus screen analysis, Announcer, Stark Doctor and the how-to guide."
 }

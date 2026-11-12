@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.46",
+  "version": "1.0.48",
   "size": "90MB",
-  "sha256": "0b55b1f78b73ffcf9bc28901ca838e96210fcf7bdd922b8a9d9a50bee0226101",
+  "sha256": "2affdae7e95daef9445d82248c638e2476d40f1542ed4bc0f1704ccb45b655b5",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: they can SEE — say \"what is this?\" on any screen, or share photos and videos. Analyse mode, Announcer (says the caller's name first and who texted), smart answer/reject by voice, several jobs in one sentence, faster replies with voice first then text, stronger hearing, a how-to guide, and Stark Doctor: complain and it fixes itself and learns."
+  "whats_new": "New: FRIDAY — unlock Combined mode and Jarvis + Ultron merge into FRIDAY (green interface, 'Friday' wake word). Cinematic opening animation, Analyse-mode switch on the home screen, smarter hearing (no more 'say that again' loops or wrong calls), plus screen analysis, Announcer, Stark Doctor and the how-to guide."
 }
