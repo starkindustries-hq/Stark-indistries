@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "size": "87MB",
-  "sha256": "f6ab7f664c77c359bdb677c012305835997c9d7b3f827a6079f1ab293f540e27",
+  "sha256": "61e9cbcb65c470b0a916b5c76a46b392f6c88ab918fb9f372f8512cc38371f8f",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "New STARK-1 brain: starts talking instantly, reads any website you mention, and learns about you over time."
+  "whats_new": "Short, quick answers. STARK-1 brain talks instantly, reads websites and learns about you."
 }
