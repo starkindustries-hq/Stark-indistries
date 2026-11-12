@@ -214,6 +214,21 @@ h1{text-align:center;font-weight:500;font-size:clamp(46px,7.4vw,118px);line-heig
 @media (max-width:860px){.hud-clock{top:62px}.hud-clock b{font-size:30px}.hud-clock span{font-size:9px;letter-spacing:.1em}}
 @media (max-height:700px){.hud-clock{display:none}}
 
+/* ===== mobile menu + founders link ===== */
+.menubtn{display:none;align-items:center;gap:8px;height:34px;padding:0 13px;border-radius:999px;border:1px solid var(--hair);font-size:12.5px;margin-left:10px}
+.menubtn i{display:grid;gap:3px}.menubtn i b{display:block;width:12px;height:1.5px;background:var(--fg);border-radius:2px}
+.navleft{display:flex;align-items:center}
+.mlist{margin-top:26px;display:grid;border-top:1px solid var(--hair)}
+.mlist button{display:flex;justify-content:space-between;align-items:center;padding:18px 2px;border-bottom:1px solid var(--hair);font-size:22px;font-weight:500;letter-spacing:-.03em;text-align:left}
+.mlist button span{font:500 10.5px 'JetBrains Mono',monospace;letter-spacing:.14em;color:var(--mute)}
+.mlist button em{font-style:normal;width:8px;height:8px;border-radius:50%;margin-right:12px;display:inline-block}
+.fdlink{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:14px;color:var(--mute);transition:color .3s}
+.fdlink:hover{color:var(--fg)}
+.fdlink .av{width:26px;height:26px;border-radius:50%;background:url(founders/binit.webp) center 30%/cover;border:1px solid var(--hair)}
+.pill .sm{display:none}
+@media (max-width:860px){.menubtn{display:inline-flex}.brand{margin-right:0}.pill .lg{display:none}.pill .sm{display:inline}}
+body:has(.sheet.on) .sjg-fab,body:has(.fd.on) .sjg-fab,body:has(.sheet.on) .sjg-tip,body:has(.fd.on) .sjg-tip{opacity:0!important;pointer-events:none!important;visibility:hidden}
+
 /* ===== founders ===== */
 .fd{position:fixed;inset:0;z-index:72;background:rgba(5,6,7,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y}
@@ -349,13 +364,13 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <div class="vignette"></div>
 
 <nav>
-  <button class="brand pre" id="brand" aria-label="Stark Industries home"><i></i>STARK INDUSTRIES</button>
+  <div class="navleft"><button class="brand pre" id="brand" aria-label="Stark Industries home"><i></i>STARK INDUSTRIES</button><button class="menubtn pre" id="menuBtn" aria-label="Open menu"><i><b></b><b></b><b></b></i>Menu</button></div>
   <div class="links pre" id="links">
     <button data-go="0">Jarvis</button><button data-go="1">Ultron</button><button data-go="2">Stark Orbit</button><button id="lnFd">Founders</button><button id="lnFaq">FAQ</button>
   </div>
   <div class="navbtns pre" id="navBtns">
-    <button class="pill solid" id="getJ"><span class="dot"></span>Get Jarvis app</button>
-    <button class="pill ult" id="getU">Get Ultron app</button>
+    <button class="pill solid" id="getJ"><span class="dot"></span><span class="lg">Get Jarvis app</span><span class="sm">Jarvis ↓</span></button>
+    <button class="pill ult" id="getU"><span class="lg">Get Ultron app</span><span class="sm">Ultron ↓</span></button>
   </div>
 </nav>
 
@@ -379,6 +394,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
     <button class="pill solid" id="explore">Explore products<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M4 9l4 4 4-4"/></svg></button>
     <button class="pill ghost" id="studio">Get Jarvis app ↓</button>
   </div>
+  <div style="text-align:center"><button class="fdlink pre" id="heroFd"><span class="av"></span>Meet the founders — Binit &amp; Mridul →</button></div>
   <div class="foot">
     <div class="scroll mono pre" id="scrollHint"><i></i>Scroll to enter</div>
     <div class="mono pre" id="clock">--:--:-- IST</div>
@@ -427,6 +443,19 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
     </div>
     <ul class="sh-feats" style="margin-top:18px" id="shF"></ul>
     <div class="sh-alt"><span id="altT">Want Ultron too?</span><button id="altB">Get Ultron app →</button></div>
+  </div>
+</aside>
+<aside class="sheet" id="menuSheet" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="sh-scroll">
+    <div class="sh-top"><span class="mono">STARK INDUSTRIES</span><button class="sh-x" id="menuX" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="mlist">
+      <button data-m="p0"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#5cc8ff"></em>Jarvis</span><span>Voice assistant</span></button>
+      <button data-m="p1"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#ff2a3a"></em>Ultron</span><span>Superior AI</span></button>
+      <button data-m="p2"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#73f9d1"></em>Stark Orbit</span><span>Satellite tracker</span></button>
+      <button data-m="fd"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">Founders</span><span>Binit · Mridul</span></button>
+      <button data-m="faq"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">FAQ</span><span>Quick answers</span></button>
+    </div>
+    <div class="p-ctas" style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="pill solid" data-m="gj">Get Jarvis app</button><button class="pill ult" data-m="gu">Get Ultron app</button></div>
   </div>
 </aside>
 <section class="fd" id="fd" role="dialog" aria-modal="true" aria-labelledby="fdH" aria-hidden="true">
@@ -674,7 +703,7 @@ function toProd(i=0){
   const hp=heroPose(),pp=prodPose();
   const tl=gsap.timeline({onComplete:()=>{busy=false}});
   tl.to('#h1 .line>span',{yPercent:-110,duration:.6,ease:'power3.in',stagger:.05},0)
-    .to(['#eyebrow','#sub','#ctas','#scrollHint','#clock','#horizon','#footFaq','#footFd','#hudClock','#hudL','#hudR'],{opacity:0,y:-12,duration:.45,ease:'power2.in'},0);
+    .to(['#eyebrow','#sub','#ctas','#heroFd','#scrollHint','#clock','#horizon','#footFaq','#footFd','#hudClock','#hudL','#hudR'],{opacity:0,y:-12,duration:.45,ease:'power2.in'},0);
   if(RM){tl.add(()=>{setCol(i,0);Object.assign(O,pp);O.dial=0;enterProd(i)},.5);return;}
   // fly into the orb until its light fills the screen
   tl.to(O,{dial:0,duration:.35,ease:'power2.in'},0).to(O,{rad:Math.hypot(W,H)*1.15,x:.5,y:.5,duration:1.15,ease:'expo.in'},.15)
@@ -711,7 +740,7 @@ function toHero(){
     .to(O,{x:hp.x,y:hp.y,rad:hp.rad,duration:1.4,ease:'expo.inOut'},.2)
     .to(O,{dial:1,duration:1.2,ease:'power2.out'},1.2)
     .fromTo('#h1 .line>span',{yPercent:110},{yPercent:0,duration:1.1,ease:'expo.out',stagger:.07},.8)
-    .to(['#eyebrow','#sub','#ctas','#scrollHint','#clock','#horizon','#footFaq','#footFd','#hudClock','#hudL','#hudR'],{opacity:1,y:0,duration:.8,ease:'power2.out',stagger:.05},.9);
+    .to(['#eyebrow','#sub','#ctas','#heroFd','#scrollHint','#clock','#horizon','#footFaq','#footFd','#hudClock','#hudL','#hudR'],{opacity:1,y:0,duration:.8,ease:'power2.out',stagger:.05},.9);
 }
 
 /* ---------- input ---------- */
@@ -724,7 +753,7 @@ addEventListener('touchstart',e=>{if(busyUI(e)){ty=null;return}ty=e.touches[0].c
 addEventListener('touchend',e=>{if(ty===null)return;const dy=ty-e.changedTouches[0].clientY,dx=tx-e.changedTouches[0].clientX;ty=null;
   if(mode==='prod'&&Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){go(idx+(dx>0?1:-1));return}
   if(dy>40)down();else if(dy<-40)up()},{passive:true});
-addEventListener('keydown',e=>{const k=e.key;if(root.classList.contains('orbit-open'))return;if(e.target&&e.target.closest&&e.target.closest('.sjg'))return;if(sheetOpen){if(k==='Escape'){closeSheet();closeFaq();closeFd()}return}
+addEventListener('keydown',e=>{const k=e.key;if(root.classList.contains('orbit-open'))return;if(e.target&&e.target.closest&&e.target.closest('.sjg'))return;if(sheetOpen){if(k==='Escape'){closeSheet();closeFaq();closeFd();closeMenu()}return}
   if(['ArrowDown','PageDown',' '].includes(k)){e.preventDefault();down()}
   else if(['ArrowUp','PageUp'].includes(k)){e.preventDefault();up()}
   else if(k==='ArrowRight'&&mode==='prod')go(idx+1);else if(k==='ArrowLeft'&&mode==='prod')go(idx-1);
@@ -770,7 +799,14 @@ function openFd(){closeSheet();closeFaq();fdOpen=true;sheetOpen=true;const f=$('
   gsap.fromTo(['#fd .fd-top > *','#fd .fc','#fd .fd-foot'],{y:30,opacity:0},{y:0,opacity:1,duration:1.1,ease:'expo.out',stagger:.08,delay:.1});
   setTimeout(()=>$('fdX').focus({preventScroll:true}),60)}
 function closeFd(){if(!fdOpen)return;fdOpen=false;sheetOpen=false;const f=$('fd');f.classList.remove('on');f.setAttribute('aria-hidden','true')}
-$('lnFd').onclick=openFd;$('footFd').onclick=openFd;$('fdX').onclick=closeFd;$('faqX').onclick=closeFaq;$('scrim').addEventListener('click',closeFaq);
+$('lnFd').onclick=openFd;$('footFd').onclick=openFd;$('fdX').onclick=closeFd;$('heroFd').onclick=openFd;
+let menuOpen=false;
+function openMenu(){closeSheet();closeFaq();closeFd();menuOpen=true;sheetOpen=true;$('scrim').classList.add('on');$('menuSheet').classList.add('on');$('menuSheet').setAttribute('aria-hidden','false');
+  gsap.fromTo('#menuSheet .mlist button',{y:18,opacity:0},{y:0,opacity:1,duration:.8,ease:'expo.out',stagger:.04,delay:.12})}
+function closeMenu(){if(!menuOpen)return;menuOpen=false;sheetOpen=false;$('scrim').classList.remove('on');$('menuSheet').classList.remove('on');$('menuSheet').setAttribute('aria-hidden','true')}
+$('menuBtn').onclick=openMenu;$('menuX').onclick=closeMenu;$('scrim').addEventListener('click',closeMenu);
+document.querySelectorAll('#menuSheet [data-m]').forEach(b=>b.onclick=()=>{const m=b.dataset.m;closeMenu();
+  setTimeout(()=>{if(m[0]==='p')toProd(+m[1]);else if(m==='fd')openFd();else if(m==='faq')openFaq();else if(m==='gj')openSheet('jarvis');else if(m==='gu')openSheet('ultron')},250)});$('faqX').onclick=closeFaq;$('scrim').addEventListener('click',closeFaq);
 /* one small API for the site guide (Jarvis) to drive the page */
 window.__SI={sheet:k=>{closeFd();closeFaq();openSheet(k)},faq:()=>{closeFd();openFaq()},founders:openFd,close:()=>{closeSheet();closeFaq();closeFd()},
   prod:i=>{closeSheet();closeFaq();closeFd();mode==='prod'?go(i):toProd(i)},hero:()=>{closeSheet();closeFaq();closeFd();toHero()},orbit:openOrbitHost,
@@ -793,10 +829,10 @@ function entrance(){
   if(RM){O.pw=1;O.dial=1;tl.to('.pre',{opacity:1,duration:.6}).set('#h1 .line>span',{yPercent:0},0);return}
   tl.fromTo(O,{pw:0,rad:hp.rad*.55},{pw:1,rad:hp.rad,duration:2.4,ease:'expo.out'},0)
     .to(O,{dial:1,duration:2,ease:'power2.out'},.9)
-    .to(['#brand','#links','#navBtns'],{opacity:1,duration:1,stagger:.08,ease:'power2.out'},.4)
+    .to(['#brand','#links','#navBtns','#menuBtn'],{opacity:1,duration:1,stagger:.08,ease:'power2.out'},.4)
     .to('#eyebrow',{opacity:1,duration:.8},.7)
     .to('#h1 .line>span',{yPercent:0,duration:1.3,ease:'expo.out',stagger:.09},.75)
-    .fromTo(['#sub','#ctas'],{opacity:0,y:14},{opacity:1,y:0,duration:1,ease:'expo.out',stagger:.08},1.1)
+    .fromTo(['#sub','#ctas','#heroFd'],{opacity:0,y:14},{opacity:1,y:0,duration:1,ease:'expo.out',stagger:.08},1.1)
     .to(['#scrollHint','#clock','#horizon','#footFaq','#footFd'],{opacity:1,duration:1},1.4)
     .fromTo(['#hudClock','#hudL','#hudR'],{opacity:0,y:-8},{opacity:1,y:0,duration:1.2,ease:'expo.out',stagger:.1},1.0);
 }
