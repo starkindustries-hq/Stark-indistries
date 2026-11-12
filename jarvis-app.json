@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "size": "87MB",
-  "sha256": "fd206451960298a147d572ca67231ecb730882f317176dd809cd86f4c87dbf9d",
+  "sha256": "9ccea0df31fa18d1db14efefac08e521324037f5be3e832f1ba57b5b2f9e1c18",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "Doesn't hear its own voice any more, speaks faster, no Google pop-up."
+  "whats_new": "Works straight away: the AI brain is built in, no key needed. Better hearing, faster replies."
 }

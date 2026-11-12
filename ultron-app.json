@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "size": "87MB",
-  "sha256": "1fc04e3a0fa03e6ba7a54718f859ba9788420b08f8a9dfaa2679b815b76a8f4d",
+  "sha256": "d3492c9d5918efe77045994a97c4c7fa7eccd7557b3d7ba9da78a554587ef965",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "Doesn't hear its own voice any more, speaks faster, no Google pop-up."
+  "whats_new": "Works straight away: the AI brain is built in, no key needed. Better hearing, faster replies."
 }
