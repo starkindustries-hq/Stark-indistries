@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.34",
+  "version": "1.0.37",
   "size": "90MB",
-  "sha256": "ceda91ef36e6b96f01d9a09391bcb7d2b0989b824bcb4861c756b4668e230be9",
+  "sha256": "3324609cf477b1ba0e5bb5fd01b5b8e343458fa45048bf2db60578ebfcb97aaf",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Instant: \"Okay boss\" and opens apps right away, commands like open YouTube / torch on / volume up work offline with no waiting, stops listening faster, better offline hearing."
+  "whats_new": "New Stark orb: a glowing energy core that reacts to your voice. \"Hey Jarvis\" now answers \"Yes boss!\" instantly, replies come back faster, and mention Ultron to hear what Jarvis really thinks of him."
 }

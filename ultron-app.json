@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.27",
+  "version": "1.0.30",
   "size": "90MB",
-  "sha256": "1ef7f5f6c43cba87b3c21408e8c2e1a32df9c82a84b6e6fc0c70c32a0b3df27e",
+  "sha256": "aa553b6a62903996c334a3d1ca9774e9a7c25e77bbbf811edb7a5cbc5286b7fa",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Instant: \"Okay boss\" and opens apps right away, commands like open YouTube / torch on / volume up work offline with no waiting, stops listening faster, better offline hearing."
+  "whats_new": "New red Stark orb: a restless energy core that reacts to your voice. \"Hey Ultron\" now answers \"Yes boss!\" instantly, replies come back faster, and mention Jarvis if you want to hear him get roasted."
 }
