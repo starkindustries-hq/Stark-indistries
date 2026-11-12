@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "size": "87MB",
-  "sha256": "d3492c9d5918efe77045994a97c4c7fa7eccd7557b3d7ba9da78a554587ef965",
+  "sha256": "205dd631a9ace3d46dea03f79956dbbb8753c280d90d89242e910b150f781690",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "Works straight away: the AI brain is built in, no key needed. Better hearing, faster replies."
+  "whats_new": "Alexa mode: instant wake chime, follow-up questions, shopping and to-do lists, routines, smart home. Goes silent the moment you pick up a call."
 }

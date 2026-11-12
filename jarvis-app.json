@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.13",
+  "version": "1.0.16",
   "size": "87MB",
-  "sha256": "9ccea0df31fa18d1db14efefac08e521324037f5be3e832f1ba57b5b2f9e1c18",
+  "sha256": "50816947149df94ce223d794622b487bb5da308dd44e1e4d5ec22a99b9f4a7e4",
   "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "Works straight away: the AI brain is built in, no key needed. Better hearing, faster replies."
+  "whats_new": "Alexa mode: instant wake chime, follow-up questions, shopping and to-do lists, routines, smart home. Goes silent the moment you pick up a call."
 }
