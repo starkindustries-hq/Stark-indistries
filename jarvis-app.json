@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.49",
+  "version": "1.0.53",
   "size": "90MB",
-  "sha256": "3cb1893a771173af596026cca19efdd102060148562605de344e84291fbf195d",
+  "sha256": "8d38bcc3ff6645ad50178b2c416fd5a77f23748fa340306c49fdd387a8478fa1",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: Google speech for commands (much more accurate, beep nearly silent), faster streaming replies and a stronger Analyse mode, louder voice, a living animated background, Shut down mode (memory kept), faster caller names with a clear permission prompt, Busy mode fixes. FRIDAY now has her own voice, reads her guide aloud, and splits back into Jarvis and Ultron with an animation."
+  "whats_new": "New: real caller names (set Jarvis as your Caller ID app), stronger hearing (Google speech knows your contacts and apps, English + Hindi), instant roast battles, FRIDAY wake word fixed and greets as FRIDAY, Analyse mode, Shut down mode, louder voice and a living animated background."
 }
