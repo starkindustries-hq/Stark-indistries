@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "size": "90MB",
-  "sha256": "4d5a2a23f42fda3c38e03c4c3c4dfaa789d1efa9ac6161fba984f9062bf0707f",
+  "sha256": "409bce74c8f1c2e5114af89e354811076d0952de6be04d2aa19f727c472a8a0b",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
   "whats_new": "New: caller sensor - Jarvis reads the caller's name straight off the ringing screen (keep Jarvis on in Accessibility) and says it once, no more 'unknown number'. Plus stronger hearing, instant roast battles, FRIDAY wake fix, Analyse mode and Shut down mode."
 }
