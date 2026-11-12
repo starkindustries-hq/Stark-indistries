@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.37",
+  "version": "1.0.39",
   "size": "90MB",
-  "sha256": "3324609cf477b1ba0e5bb5fd01b5b8e343458fa45048bf2db60578ebfcb97aaf",
+  "sha256": "e5e1e955281758d1d15b0040f129fa9bbf8b60690815f7a64308dfa32e028bd4",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New Stark orb: a glowing energy core that reacts to your voice. \"Hey Jarvis\" now answers \"Yes boss!\" instantly, replies come back faster, and mention Ultron to hear what Jarvis really thinks of him."
+  "whats_new": "New look: Stark orb logo and a new glowing background. Fixed: Jarvis no longer answers its own voice (no more double replies), hears you more reliably, and the orb is lighter on your phone. \"Hey Jarvis\" → \"Yes boss!\""
 }

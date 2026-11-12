@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.30",
+  "version": "1.0.32",
   "size": "90MB",
-  "sha256": "aa553b6a62903996c334a3d1ca9774e9a7c25e77bbbf811edb7a5cbc5286b7fa",
+  "sha256": "3c1c32e5d32e7ce26f454202646f98d508b36a8c2b5d3d75b82d50409e9d0a22",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New red Stark orb: a restless energy core that reacts to your voice. \"Hey Ultron\" now answers \"Yes boss!\" instantly, replies come back faster, and mention Jarvis if you want to hear him get roasted."
+  "whats_new": "New look: red Stark orb logo and a new glowing background. Fixed: Ultron no longer answers its own voice (no more double replies), hears you more reliably, and the orb is lighter on your phone. \"Hey Ultron\" → \"Yes boss!\""
 }
