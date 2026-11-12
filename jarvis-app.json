@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "size": "90MB",
-  "sha256": "2affdae7e95daef9445d82248c638e2476d40f1542ed4bc0f1704ccb45b655b5",
+  "sha256": "3cb1893a771173af596026cca19efdd102060148562605de344e84291fbf195d",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: FRIDAY — unlock Combined mode and Jarvis + Ultron merge into FRIDAY (green interface, 'Friday' wake word). Cinematic opening animation, Analyse-mode switch on the home screen, smarter hearing (no more 'say that again' loops or wrong calls), plus screen analysis, Announcer, Stark Doctor and the how-to guide."
+  "whats_new": "New: Google speech for commands (much more accurate, beep nearly silent), faster streaming replies and a stronger Analyse mode, louder voice, a living animated background, Shut down mode (memory kept), faster caller names with a clear permission prompt, Busy mode fixes. FRIDAY now has her own voice, reads her guide aloud, and splits back into Jarvis and Ultron with an animation."
 }

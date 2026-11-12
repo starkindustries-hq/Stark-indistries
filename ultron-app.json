@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "size": "90MB",
-  "sha256": "3575775f03ad50aa06ef5230449103dec96353f71f39115ddbf9d71469036ba0",
+  "sha256": "2a7f990c4d3f1b65f45c9bb69e04147e46d4a0a0d877fa4e402aa18f6433712e",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: FRIDAY — unlock Combined mode and Jarvis + Ultron merge into FRIDAY (green interface, 'Friday' wake word). Cinematic opening animation, Analyse-mode switch on the home screen, smarter hearing (no more 'say that again' loops or wrong calls), plus screen analysis, Announcer, Stark Doctor and the how-to guide."
+  "whats_new": "New: Google speech for commands (much more accurate, beep nearly silent), faster streaming replies and a stronger Analyse mode, louder voice, a living animated background, Shut down mode (memory kept), faster caller names with a clear permission prompt, Busy mode fixes. FRIDAY now has her own voice, reads her guide aloud, and splits back into Jarvis and Ultron with an animation."
 }
