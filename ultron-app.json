@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.24",
+  "version": "1.0.26",
   "size": "90MB",
-  "sha256": "51a22a88a5261cbf63458564da80c150cdfa559d78e7403f4c405e4d1370ac28",
+  "sha256": "76acdc95b058040db9024a7b85ac24518f4f72f17accc102fa70e16ffbbdda6f",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Safer and faster: never acts on its own voice, calls need the wake word, quicker replies, \"Yes boss\" on wake, and the new offline brain."
+  "whats_new": "Fixed: no more \"busy\" errors (new Gemini brain), hears your full sentence, faster replies, reminders (\"remind me to ... at 6 PM\"), no repeated \"Yes boss\"."
 }

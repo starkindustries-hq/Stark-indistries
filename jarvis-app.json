@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.23",
+  "version": "1.0.30",
   "size": "90MB",
-  "sha256": "1bc854d845ec8820994879be531e1605fc813aaf10611e474b8b1b48091e5f38",
+  "sha256": "fc7f0c90df0fee477925e8bf2e4855afac413026fe97e001edfadac9a9257f29",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Safer and faster: never acts on its own voice, calls need the wake word, quicker replies, \"Yes boss\" on wake, and the new offline brain."
+  "whats_new": "Fixed: no more \"busy\" errors (new Gemini brain), hears your full sentence, faster replies, reminders (\"remind me to ... at 6 PM\"), no repeated \"Yes boss\"."
 }
