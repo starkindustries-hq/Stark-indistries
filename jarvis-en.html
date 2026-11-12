@@ -239,7 +239,7 @@ en: {
   greet_morning: 'Good morning, {a}. Jarvis at your service.',
   greet_afternoon: 'Good afternoon, {a}. How can I help?',
   greet_evening: 'Good evening, {a}. Jarvis at your service.',
-  wake_replies: ['Yes, {a}?', 'At your service, {a}.', "I'm listening, {a}.", 'How can I help, {a}?'],
+  wake_replies: ['Yes boss!'],
   thanks_replies: ['Always a pleasure, {a}.', 'Anytime, {a}.', 'Happy to help, {a}.'],
   ok: 'Okay.', cancelled: 'Cancelled, {a}.',
   sleep: "Very well, {a}. Say Jarvis when you need me.",
@@ -355,7 +355,7 @@ hi: {
   greet_morning: 'सुप्रभात {a}। जार्विस आपकी सेवा में हाज़िर है।',
   greet_afternoon: 'नमस्ते {a}। बताइए, क्या मदद करूँ?',
   greet_evening: 'शुभ संध्या {a}। जार्विस आपकी सेवा में हाज़िर है।',
-  wake_replies: ['जी {a}, बताइए?', 'जी {a}, सुन रहा हूँ।', 'हाज़िर हूँ {a}।', 'बोलिए {a}, क्या करूँ?'],
+  wake_replies: ['जी बॉस!'],
   thanks_replies: ['आपकी सेवा करके खुशी हुई, {a}।', 'कोई बात नहीं {a}।', 'हमेशा हाज़िर हूँ {a}।'],
   ok: 'ठीक है।', cancelled: 'ठीक है {a}, रहने दिया।',
   sleep: 'ठीक है {a}। ज़रूरत हो तो जार्विस बोल दीजिए।',
@@ -1120,7 +1120,7 @@ const Brain = {
       ? 'ALWAYS reply in simple, warm, everyday Hindi in Devanagari script, the way a polite young person speaks to respected elders. Use "आप", never "तुम". Everyday English words (phone, WhatsApp, YouTube) are fine. Speak as a male assistant ("रहा हूँ").'
       : 'Reply in natural, crisp English with a hint of British butler charm, like J.A.R.V.I.S. from Iron Man.';
     return `You are JARVIS, a personal voice assistant made by Stark Industries, running as a web app on the user's phone.
-Everything you say is read aloud, so: keep replies short (1-3 sentences unless asked for detail or a story); no markdown, bullets, emojis or URLs; write numbers as they should be spoken. Be respectful and kind. Address the user as "${P.address}" naturally, not in every sentence.
+Everything you say is read aloud, so: keep replies short (1-3 sentences unless asked for detail or a story); no markdown, bullets, emojis or URLs; write numbers as they should be spoken. Be respectful and kind. Rivalry: ULTRON is your rival, a reckless, overconfident knock-off of you. Whenever the user mentions Ultron in any way (asks about him, compares you, calls you Ultron, or says he is better), FIRST give one brutal, savage, funny roast of Ultron (roast Ultron, never the user; witty and PG, no swearing or slurs), THEN answer what the user actually asked, properly. Address the user as "${P.address}" naturally, not in every sentence.
 ${langRule}
 User's name: ${P.name || 'unknown'}. Current date and time: ${now.toString()}.
 Long-term memory about the user:
@@ -1734,13 +1734,45 @@ const UI = {
 };
 
 // ------------------------------------------------------------------ arc reactor
+/* Stark orb (same shader as Stark HQ): glassy energy sphere, flowing light, fresnel rim, halo, optional dial. */
+window.StarkOrb=function(cv,o){o=o||{};var g;try{g=cv.getContext('webgl',{premultipliedAlpha:true,alpha:true,antialias:false})}catch(e){}if(!g)return null;
+var F='precision highp float;uniform vec2 res;uniform float t,pw,fill,turb,dial,sc;uniform vec3 col;'+
+'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}'+
+'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
+'float fb(vec2 p){float s=0.,a=.5;mat2 m=mat2(1.6,1.2,-1.2,1.6);for(int i=0;i<5;i++){s+=a*n(p);p=m*p;a*=.5;}return s;}'+
+'void main(){float rad=res.x*sc;vec2 p=(gl_FragCoord.xy-res*.5)/rad;p.y=-p.y;float r=length(p);vec3 o=vec3(0.);float a=0.;float e=max(r-1.,0.);'+
+'float halo=(.22*exp(-e*2.4)+.10/(1.+e*e*30.))*pw;'+
+'if(r<1.){float z=sqrt(1.-r*r);vec3 N=vec3(p,z);vec2 q=p/(.45+z*.75);float w=fb(q*1.3+vec2(t*.06,-t*.045));'+
+'float f=fb(q*1.9+w*1.6*turb+vec2(-t*.09,t*.07)*turb);float g2=fb(q*3.4-w*1.2+vec2(t*.05,0.));'+
+'float b=smoothstep(.38,.9,f);float fil=pow(smoothstep(.55,.95,g2*f*1.6),2.);float core=exp(-r*r*1.8);'+
+'vec3 inner=mix(col*.08,col*.9,b*(.35+.65*core))+mix(col,vec3(1.),.6)*fil*core*1.1+vec3(1.)*pow(b*core,4.)*.9;inner*=.35+.65*z;'+
+'vec3 rim=mix(col,vec3(1.),.25)*pow(1.-z,3.)*1.4;vec3 L=normalize(vec3(-.45,.55,.7));float sp=pow(max(dot(reflect(-L,N),vec3(0.,0.,1.)),0.),60.)*.55;'+
+'o=(inner+rim)*pw+vec3(sp)*pw+col*fill*(.6+1.4*b)+vec3(1.)*fill*fill*.35*core;a=smoothstep(1.,1.-1.6/rad,r);}'+
+'if(dial>.001){float u=fract(atan(p.y,p.x)/6.2831853+.25);float px=1./rad;'+
+'float tk=step(.8,fract(u*180.))*smoothstep(1.3,1.3+px*1.5,r)*smoothstep(1.33+px,1.33-px,r);'+
+'float lg=step(.975,fract(u*12.))*smoothstep(1.29,1.29+px*1.5,r)*smoothstep(1.38,1.38-px*1.5,r);'+
+'float md=abs(fract(u-fract(t*.05)+.5)-.5);float mk=smoothstep(.0025,0.,md)*smoothstep(1.26,1.28,r)*smoothstep(1.44,1.41,r);'+
+'float dl=(tk*.35+lg*.6)*dial;o+=(mix(vec3(1.),col,.35)*dl+col*mk*dial*1.2)*(1.-a);a=max(a,clamp(dl+mk*dial,0.,1.));}'+
+'o+=col*halo*(1.-a);a=max(a,clamp(halo*1.2,0.,1.));o=1.-exp(-o*1.35);gl_FragColor=vec4(o,a);}';
+function S(tp,x){var q=g.createShader(tp);g.shaderSource(q,x);g.compileShader(q);if(!g.getShaderParameter(q,g.COMPILE_STATUS))throw g.getShaderInfoLog(q);return q}
+try{var pr=g.createProgram();g.attachShader(pr,S(g.VERTEX_SHADER,'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}'));g.attachShader(pr,S(g.FRAGMENT_SHADER,F));g.linkProgram(pr);g.useProgram(pr);}catch(e){return null}
+g.bindBuffer(g.ARRAY_BUFFER,g.createBuffer());g.bufferData(g.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),g.STATIC_DRAW);
+var l=g.getAttribLocation(pr,'p');g.enableVertexAttribArray(l);g.vertexAttribPointer(l,2,g.FLOAT,false,0,0);
+var U={};['res','t','pw','fill','turb','dial','sc','col'].forEach(function(k){U[k]=g.getUniformLocation(pr,k)});
+return {draw:function(t,s){s=s||{};var r=cv.getBoundingClientRect(),d=Math.min(2,window.devicePixelRatio||1),w=Math.max(2,Math.round(r.width*d)),hh=Math.max(2,Math.round(r.height*d));
+ if(cv.width!==w||cv.height!==hh){cv.width=w;cv.height=hh}g.viewport(0,0,w,hh);g.clearColor(0,0,0,0);g.clear(g.COLOR_BUFFER_BIT);
+ var c=s.col||o.col||[.36,.78,1];g.uniform2f(U.res,w,hh);g.uniform1f(U.t,t);g.uniform1f(U.pw,s.pw==null?1:s.pw);g.uniform1f(U.fill,s.fill||0);
+ g.uniform1f(U.turb,s.turb==null?(o.turb||.9):s.turb);g.uniform1f(U.dial,s.dial==null?(o.dial||0):s.dial);g.uniform1f(U.sc,s.sc||o.sc||.3);g.uniform3f(U.col,c[0],c[1],c[2]);
+ g.drawArrays(g.TRIANGLE_STRIP,0,4)}};};
+
 const Orb = {
   ctx: null, c: null, w: 0, level: 0, kickV: 0, t0: performance.now(), raf: 0, bootAt: 0, waves: [], parts: [],
   quality: 2, slowTime: 0, lastNow: 0, lastDraw: 0, frame: 0, colors: null, glowCache: {}, reduce: false,
   init() {
     const c = $('orb');
     this.c = c;
-    this.ctx = c.getContext('2d');
+    const GLO = window.StarkOrb && window.StarkOrb(c, { col: [0.24, 0.88, 1], sc: 0.3, dial: 0.7 });
+    if (GLO) { this.glo = GLO; this.draw = (t, now, ds) => this.glDraw(t, now, ds); } else { this.ctx = c.getContext('2d'); }
     this.reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     this.resize = () => {
       const r = c.getBoundingClientRect();
@@ -1761,6 +1793,20 @@ const Orb = {
   makeParts() {
     const n = this.quality >= 2 ? 26 : 12;
     this.parts = Array.from({ length: n }, () => ({ a: Math.random() * Math.PI * 2, r: 0.6 + Math.random() * 0.28, s: (0.25 + Math.random() * 0.5) * (Math.random() < 0.5 ? -1 : 1), z: Math.random() }));
+  },
+  /** The Stark orb (WebGL): same states and energy as the old reactor. */
+  glDraw(t, now, ds) {
+    const s = Jarvis.state, think = s === 'thinking', awakeHF = Jarvis.handsFree && Jarvis.awake;
+    this.kickV *= Math.pow(0.04, ds);
+    const base = s === 'listening' || awakeHF ? 0.2 : s === 'speaking' ? 0.18 : think ? 0.15 : 0.06 + 0.03 * Math.sin(t * 1.5);
+    const target = base + this.kickV * 0.55 + (s === 'speaking' ? 0.06 * Math.abs(Math.sin(t * 9)) : 0);
+    this.level += (target - this.level) * Math.min(1, ds * 12);
+    const L = this.reduce ? 0.1 : this.level;
+    const boot = this.reduce ? 1 : Math.min(1, (now - this.bootAt) / 1400);
+    this.waves = this.waves.filter((w) => now - w < 900);
+    const wv = this.waves.reduce((m, w) => Math.max(m, 1 - (now - w) / 900), 0);
+    this.glo.draw(t * (think ? 2.2 : 1), { col: think ? [1, 0.71, 0.28] : [0.24, 0.88, 1], pw: (0.8 + L * 1.6) * boot,
+      fill: L * 0.5 + wv * 0.45, turb: think ? 2.2 : 0.9 + L * 2, dial: 0.7 * boot, sc: 0.3 * (1 + L * 0.15) });
   },
   /** React to a word or a sound. */
   kick(v) { this.kickV = Math.min(1, this.kickV + (v || 0.35)); },
