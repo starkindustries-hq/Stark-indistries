@@ -50,6 +50,9 @@ button:focus-visible{outline:1px solid var(--accent);outline-offset:4px;border-r
   animation:grain 1s steps(6) infinite}
 @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
 #orb{position:fixed;inset:0;width:100%;height:100%;z-index:2;display:block}
+#bhole{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;opacity:0;transition:opacity 1.6s ease}
+#bhole.on{opacity:1}
+html.orbit-open #bhole{display:none}
 .horizon{position:fixed;left:0;right:0;top:62%;height:1px;z-index:1;pointer-events:none;
   background:linear-gradient(90deg,transparent,var(--faint) 20%,var(--faint) 80%,transparent)}
 
@@ -352,6 +355,11 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 .tabs{right:calc(var(--pad) + 200px)}
 .foot{justify-content:flex-start;gap:32px}
 .faqsheet .faq{margin-top:22px}
+.fd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 6px}
+.fd-stats div{border:1px solid rgba(255,196,92,.25);border-radius:14px;padding:14px 12px;background:rgba(255,196,92,.04)}
+.fd-stats b{display:block;font-size:clamp(22px,3vw,30px);color:#ffc45c;letter-spacing:-.02em}
+.fd-stats span{font-size:12px;color:var(--dim)}
+@media(max-width:620px){.fd-stats{grid-template-columns:repeat(2,1fr)}}
 .glang{display:inline-flex;gap:4px;margin-top:16px;padding:3px;border:1px solid var(--hair);border-radius:999px}
 .glang button{border:0;background:none;color:var(--dim);font:500 13px/1 var(--sans);padding:8px 14px;border-radius:999px;cursor:pointer}
 .glang button.on{background:rgba(255,255,255,.1);color:var(--fg)}
@@ -362,6 +370,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
+<canvas id="bhole" aria-hidden="true"></canvas>
 <canvas id="orb" aria-hidden="true"></canvas>
 <div class="horizon pre" id="horizon"></div>
 <div class="vignette"></div>
@@ -477,8 +486,8 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
         <div class="info">
           <div class="role">Founder · Stark Industries</div>
           <h3>Binit</h3>
-          <p>Builds Jarvis, Ultron and Stark Orbit — the voice, the brain and the websites — and keeps pushing the next update.</p>
-          <div class="chips"><span>Jarvis</span><span>Ultron</span><span>Stark Orbit</span><span>AI · Apps · Web</span></div>
+          <p>Designs and codes Jarvis and Ultron end to end — the hearing, the voice, screen vision, the caller announcer, self-repairing smart sensors — plus Stark Orbit and this site. Ships a new update the same day people ask for it.</p>
+          <div class="chips"><span>Jarvis</span><span>Ultron</span><span>Screen vision</span><span>Smart sensors</span><span>Stark Orbit</span></div>
         </div>
       </article>
       <article class="fc ph" style="--fa:#ff2a3a">
@@ -490,11 +499,12 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
         <div class="info">
           <div class="role">Co-founder &amp; backer · Stark Industries</div>
           <h3>Mridul</h3>
-          <p>Funded every Stark project from day one. Partner in everything Stark: helped design Jarvis and co-builds the apps and websites with Binit.</p>
+          <p>Funded every Stark project from day one and backs every big idea. Partner in everything Stark: helped design Jarvis, tests every build and co-builds the apps and websites with Binit.</p>
           <div class="chips"><span>Backer</span><span>Design</span><span>Jarvis</span><span>Build partner</span></div>
         </div>
       </article>
     </div>
+    <div class="fd-stats"><div><b>2</b><span>AI assistants</span></div><div><b>50+</b><span>app updates shipped</span></div><div><b>2</b><span>languages · EN + हिं</span></div><div><b>1</b><span>satellite tracker</span></div></div>
     <div class="fd-foot mono"><span>© 2026 Stark Industries</span><span>Binit · Mridul · India</span></div>
   </div>
 </section>
@@ -562,14 +572,14 @@ const SITE='https://starkindustries-hq.github.io/Stark-indistries/';
 const ON_SITE=/github\.io$/i.test(location.hostname);
 const BASE=ON_SITE?'':SITE;
 const APPS={
- jarvis:{json:'jarvis-app.json',file:'Jarvis.apk',version:'1.0.40',size:'90MB',sha256:'65c12702578fb6eb396b477bc7e6f2608b06df38a9ba577b6e4678887d5d626c',
+ jarvis:{json:'jarvis-app.json',file:'Jarvis.apk',version:'1.0.57',size:'90MB',sha256:'4d5bd20cfc1dce407a50ec0f778376e8c5bf11ee8bb45ede74689b95579ec4e1',
   notes:'Android 8 or newer (64-bit). English + Hindi. Includes offline voice.',
   eye:'SITE 02 · ANDROID APP',h:'Jarvis for Android. <span>The one that does the work.</span>',
   p:'The Jarvis on this website is a simple guide. It only knows this site. For your personal work, get the Jarvis app.',
   feats:[['Always listening, offline','Say "Jarvis" anytime. No beep, no internet needed'],['Instant calls by name','"Jarvis, call Mom" dials immediately'],['Controls any app','"Tap subscribe", "type hello", multi-step tasks by AI'],['Reads your messages','"Who messaged me?" and hands-free read-outs'],['Busy Mode','Rejects calls and texts the caller you\'re busy'],['Live AI brain','News, weather, scores via Google. Remembers what you tell it'],['English + हिंदी','One app, offline Hindi voice too. Owner PIN protected'],['Offline brain','Thinks on your phone with no internet, no key, no limits']],
   safeH:'Stay safe',safeT:'Only download Jarvis from this page. Copies shared on social media may be modified. The real app checks its own signature and refuses to run if someone has tampered with it.',
   hash:'#app',alt:['Want the savage upgrade?','Get Ultron app →','ultron']},
- ultron:{json:'ultron-app.json',file:'Ultron.apk',version:'1.0.33',size:'90MB',sha256:'cfafbfda0c4f5471c92b5a25729d14a2bb46e58a7662b00fd403cb6df66198f4',
+ ultron:{json:'ultron-app.json',file:'Ultron.apk',version:'1.0.51',size:'90MB',sha256:'679116b30e0bf9bcc0b1607a9ede738329ccbd4ab893d99fcf786115d6cbd27b',
   notes:'Android 8 or newer (64-bit). English + Hindi. Includes offline voice.',
   eye:'SITE 03 · ANDROID APP',h:'Ultron for Android. <span>The savage upgrade.</span>',
   p:'Everything the Jarvis app does, plus 22 powers Jarvis can\'t touch. It roasts you, then does the job. Installs next to Jarvis.',
@@ -1156,6 +1166,44 @@ if(ls.get('seen','0')!=='1'){
 }catch(err){try{console.warn('Jarvis site guide disabled:',err)}catch(e){}}
 })();
 
+</script>
+<script>
+/* Golden black hole: pulls in gold dust and small objects. Pure canvas, paused when the tab is hidden. */
+(()=>{const cv=document.getElementById('bhole');if(!cv)return;const g=cv.getContext('2d');
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;let W,H,dpr,cx,cy,R,parts=[],t0=performance.now(),run=true;
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0);
+ const wide=W>900;cx=wide?W*0.885:W*0.86;cy=wide?H*0.6:H*0.235;R=Math.min(W,H)*(wide?0.06:0.07);}
+function spawn(i){const big=Math.random()<.12;return{a:Math.random()*Math.PI*2,r:R*(3+Math.random()*7),s:big?1.6+Math.random()*2:0.5+Math.random()*1.2,big,
+ v:0.15+Math.random()*0.35,tr:[],h:30+Math.random()*25}}
+function init(){size();parts=[];for(let i=0;i<(W>900?190:120);i++){const p=spawn();p.r*=Math.random();p.r=Math.max(p.r,R*1.6);parts.push(p)}}
+function disk(front,t){g.save();g.translate(cx,cy);g.rotate(-0.2);
+ for(let k=0;k<22;k++){const rr=R*(1.35+k*0.09),a=1-k/22;g.beginPath();g.ellipse(0,0,rr,rr*0.27,0,front?0:Math.PI,front?Math.PI:Math.PI*2);
+  g.strokeStyle=`rgba(255,${172+k*2},${70+k*3},${(0.08+0.5*a)*(0.75+0.25*Math.sin(t*2+k))})`;g.lineWidth=1.4+(1-a)*1.6;g.stroke();}
+ g.beginPath();g.ellipse(0,0,R*1.3,R*0.33,0,front?0:Math.PI,front?Math.PI:Math.PI*2);g.strokeStyle='rgba(255,236,190,.95)';g.lineWidth=3;g.shadowColor='rgba(255,196,92,1)';g.shadowBlur=22;g.stroke();g.shadowBlur=0;
+ // hot streak circling the disk
+ const sa=(t*0.9)%(Math.PI*2);if((Math.sin(sa)>0)===front){const sx=Math.cos(sa)*R*1.45,sy=Math.sin(sa)*R*0.38;const hg=g.createRadialGradient(sx,sy,0,sx,sy,R*.5);hg.addColorStop(0,'rgba(255,240,200,.75)');hg.addColorStop(1,'rgba(255,200,120,0)');g.fillStyle=hg;g.beginPath();g.arc(sx,sy,R*.5,0,7);g.fill();}
+ g.restore();}
+function frame(now){if(!run)return;const t=(now-t0)/1000;g.clearRect(0,0,W,H);
+ const glow=g.createRadialGradient(cx,cy,R*.6,cx,cy,R*5.5);glow.addColorStop(0,'rgba(255,190,90,.22)');glow.addColorStop(.4,'rgba(255,150,40,.07)');glow.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=glow;g.fillRect(0,0,W,H);
+ disk(false,t);
+ // objects falling in: they speed up and stretch as they get close
+ for(const p of parts){const pull=Math.pow(R*6/Math.max(p.r,R),1.6);if(!still){p.a+=p.v*0.012*pull;p.r-=0.12*pull*(p.big?0.8:1);}
+  const x=cx+Math.cos(p.a)*p.r,y=cy+Math.sin(p.a)*p.r*0.42-Math.sin(p.a)*0;p.tr.push(x,y);if(p.tr.length>(p.big?16:8))p.tr.splice(0,2);
+  const close=1-Math.min(1,(p.r-R)/(R*8));const behind=Math.sin(p.a)<0&&Math.abs(x-cx)<R&&Math.abs(y-cy)<R*0.9;
+  if(!behind&&p.tr.length>3){g.beginPath();g.moveTo(p.tr[0],p.tr[1]);for(let i=2;i<p.tr.length;i+=2)g.lineTo(p.tr[i],p.tr[i+1]);g.strokeStyle=`hsla(${p.h},100%,${65+close*20}%,${0.15+0.5*close})`;g.lineWidth=p.s*0.8;g.stroke();
+   g.fillStyle=`hsla(${p.h},100%,${70+close*25}%,${0.35+0.6*close})`;g.beginPath();g.arc(x,y,p.s*(p.big?1.3:1),0,7);g.fill();}
+  if(p.r<R*1.05){Object.assign(p,spawn());}}
+ // light bent over the top
+ g.save();g.translate(cx,cy);for(let k=0;k<9;k++){const rr=R*(1.1+k*0.035);g.beginPath();g.arc(0,0,rr,Math.PI*1.06,Math.PI*1.94);g.strokeStyle=`rgba(255,${205+k*4},140,${0.5-k*0.05})`;g.lineWidth=1.6;g.stroke();}g.restore();
+ // event horizon + photon ring
+ g.beginPath();g.arc(cx,cy,R,0,7);g.fillStyle='#000';g.fill();
+ g.beginPath();g.arc(cx,cy,R*1.02,0,7);g.strokeStyle='rgba(255,226,160,.9)';g.lineWidth=2;g.shadowColor='rgba(255,190,90,1)';g.shadowBlur=16;g.stroke();g.shadowBlur=0;
+ disk(true,t);
+ if(!still)requestAnimationFrame(frame);}
+init();addEventListener('resize',()=>{size()});
+document.addEventListener('visibilitychange',()=>{run=!document.hidden;if(run&&!still)requestAnimationFrame(frame)});
+requestAnimationFrame(frame);setTimeout(()=>cv.classList.add('on'),400);
+})();
 </script>
 </body>
 </html>
