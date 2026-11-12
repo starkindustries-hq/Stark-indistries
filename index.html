@@ -352,6 +352,9 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
 .tabs{right:calc(var(--pad) + 200px)}
 .foot{justify-content:flex-start;gap:32px}
 .faqsheet .faq{margin-top:22px}
+.glang{display:inline-flex;gap:4px;margin-top:16px;padding:3px;border:1px solid var(--hair);border-radius:999px}
+.glang button{border:0;background:none;color:var(--dim);font:500 13px/1 var(--sans);padding:8px 14px;border-radius:999px;cursor:pointer}
+.glang button.on{background:rgba(255,255,255,.1);color:var(--fg)}
 .faqsheet .faq summary{font-size:16px;padding:16px 0}
 .faqsheet .faq p{font-size:14px;line-height:1.6}
 @media (max-width:860px){.tabs{right:var(--pad);bottom:84px}.panel{bottom:150px}}
@@ -499,14 +502,26 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
   <div class="sh-scroll">
     <div class="sh-top"><span class="mono">STARK INDUSTRIES · HELP</span><button class="sh-x" id="faqX" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
     <h3 class="sh-h" id="faqH">How to use. <span>Jarvis &amp; Ultron.</span></h3>
-    <div class="faq guide">
-      <details open><summary>1 · Wake them up</summary><p>Say “Jarvis” or “Ultron”. You'll hear “Yes boss!”, then say your command. Or say it in one go: “Jarvis, open YouTube”. Turn on <b>Hands-free</b> to call them anytime, even with the screen off. If they miss your words, they ask once: “say that again?”</p></details>
+    <div class="glang" role="tablist" aria-label="Language"><button class="on" data-gl="en" type="button">English</button><button data-gl="hi" type="button">हिंदी</button></div>
+    <div class="faq guide guide-hi" hidden>
+      <details open><summary>1 · उन्हें जगाइए</summary><p>“जार्विस” या “अल्ट्रॉन” बोलिए। “जी बॉस!” सुनाई देगा, फिर अपनी कमांड बोलिए। या एक साथ: “जार्विस, यूट्यूब खोलो”। <b>हैंड्स-फ़्री</b> चालू करें तो स्क्रीन बंद होने पर भी बुला सकते हैं। कमांड गूगल स्पीच से लिखी जाती है, इसलिए बहुत सटीक है। न सुनाई दे तो एक बार पूछेंगे: “फिर से बोलिए?”</p></details>
+      <details><summary>2 · “ये क्या है?” — वे देख सकते हैं</summary><p>किसी भी स्क्रीन पर बोलिए “जार्विस, ये क्या है?”, “इसे देखो”, “इसे हल करो” या “इसका अनुवाद करो”। बॉट स्क्रीन देखकर समझाएगा, कुछ शेयर नहीं करना। <b>एनालाइज़ मोड</b> चालू करें तो जवाब और तेज़। Android 11+ और एक्सेसिबिलिटी में ऐप चालू होना चाहिए।</p></details>
+      <details><summary>3 · फ़ोटो और वीडियो</summary><p>गैलरी में Share → “Ask Jarvis” / “Ask Ultron” दबाएँ, या ऐप में 📎 दबाएँ। फिर पूछिए, जैसे “इसकी कीमत कितनी है?”।</p></details>
+      <details><summary>4 · अनाउंसर: कौन कॉल कर रहा है, किसका मैसेज</summary><p>मुख्य स्क्रीन पर <b>अनाउंसर</b> चालू करें। बॉट पहले कॉल करने वाले का नाम बोलता है और बताता है किसका मैसेज आया। मैसेज का टेक्स्ट निजी रहता है। सही नाम के लिए ऐप को <b>Caller ID ऐप</b> बनाइए और Call logs + Contacts की अनुमति दें। हैंड्स-फ़्री में बस “उठाओ” या “काटो” बोलिए।</p></details>
+      <details><summary>5 · फ़ोन कमांड</summary><p>“मम्मी को कॉल करो”, “राहुल को व्हाट्सएप करो मैं आ रहा हूँ”, “इंस्टाग्राम खोलो”, “टॉर्च चालू”, “सुबह 6 बजे का अलार्म”, “10 मिनट में याद दिलाना”, “किसका मैसेज आया?”। एक वाक्य में कई काम भी: “यूट्यूब खोलो और फिर अलार्म लगाओ”। बिज़ी मोड कॉल काटकर कॉलर को मैसेज भेजता है।</p></details>
+      <details><summary>6 · ख़ुद सीखते और सुधरते हैं</summary><p>ग़लती बताइए (“ये ग़लत है”, “मेरा मतलब था…”) — अगली बार के लिए सीख लेंगे। शिकायत करें: “जार्विस, शिकायत: तुमने सुना नहीं” — स्टार्क डॉक्टर ख़ुद को जाँचकर सेटिंग्स और अनुमतियाँ तुरंत ठीक करता है।</p></details>
+      <details><summary>7 · ⏻ शट डाउन मोड</summary><p>ऊपर ⏻ दबाएँ या “शट डाउन” बोलें: सुनना, अनाउंसर, एनालाइज़ और बिज़ी मोड सब बंद, आपकी यादें सुरक्षित। “चालू हो जाओ” बोलें, सब वापस।</p></details>
+      <details><summary>8 · कुछ भी पूछिए</summary><p>ख़बरें, मौसम, गणित, आइडिया, “गुड मॉर्निंग” ब्रीफ़िंग, या “याद रखना…”। रोकने के लिए “बस” बोलें, अंग्रेज़ी के लिए “English mein baat karo”। पूरी गाइड के लिए ऐप में ❓ दबाएँ।</p></details>
+    </div>
+    <div class="faq guide guide-en">
+      <details open><summary>1 · Wake them up</summary><p>Say “Jarvis” or “Ultron”. You'll hear “Yes boss!”, then say your command. Google speech writes it down, so it's very accurate. Or say it in one go: “Jarvis, open YouTube”. Turn on <b>Hands-free</b> to call them anytime, even with the screen off. If they miss your words, they ask once: “say that again?”</p></details>
       <details><summary>2 · “What is this?” — they can see</summary><p>On any screen say “Jarvis, what is this?”, “analyse this”, “solve this” or “translate this”. The bot looks at your screen and explains it, with nothing to share. Needs Android 11+ and the app turned on in Accessibility.</p></details>
       <details><summary>3 · Photos &amp; videos</summary><p>In your gallery tap Share → “Ask Jarvis” / “Ask Ultron”, or tap 📎 inside the app. Then ask follow-ups like “how much does it cost?”.</p></details>
-      <details><summary>4 · Announcer: who's calling, who texted</summary><p>Switch on <b>Announcer</b> on the main screen. The bot says the caller's name first, and tells you who texted. Message text stays private unless you turn it on. With Hands-free on, just say “answer” or “reject”. Say “announcer off” anytime.</p></details>
+      <details><summary>4 · Announcer: who's calling, who texted</summary><p>Switch on <b>Announcer</b> on the main screen. The bot says the caller's name first, and tells you who texted. Message text stays private unless you turn it on. For the right names, set the app as your <b>Caller ID app</b> and allow Call logs + Contacts. With Hands-free on, just say “answer” or “reject”. Say “announcer off” anytime.</p></details>
       <details><summary>5 · Phone commands</summary><p>“Call Mom”, “WhatsApp Rahul I'm coming”, “open Instagram”, “torch on”, “volume up”, “set alarm 6 am”, “remind me in 10 minutes”, “who messaged me?”. Busy mode rejects calls and texts the caller for you. Allow Contacts &amp; Call logs so they know your people.</p></details>
       <details><summary>6 · They learn &amp; fix themselves</summary><p>Correct them (“that's wrong”, “I meant…”) and they learn a lesson for next time. Complain out loud — “Jarvis, complain: you didn't hear me” — and Stark Doctor checks itself, fixes settings and permissions on the spot, and logs real bugs for us.</p></details>
-      <details><summary>7 · Ask anything</summary><p>News, weather, maths, ideas, a “good morning” briefing, or “remember that…”. Say “stop” to cut them off, or “Hindi mein baat karo” to switch to Hindi. Tap ❓ in the app for the full guide.</p></details>
+      <details><summary>7 · ⏻ Shut down mode</summary><p>Tap ⏻ at the top or say “shut down”: listening, the announcer, Analyse mode and Busy mode all switch off, and your memory is kept. Say “power on” and everything comes back.</p></details>
+      <details><summary>8 · Ask anything</summary><p>News, weather, maths, ideas, a “good morning” briefing, or “remember that…”. Say “stop” to cut them off, or “Hindi mein baat karo” to switch to Hindi. Tap ❓ in the app for the full guide.</p></details>
     </div>
     <h3 class="sh-h" style="margin-top:34px">FAQ. <span>Quick answers.</span></h3>
     <div class="faq">
@@ -802,6 +817,7 @@ let faqOpen=false;
 function openFaq(){closeSheet();faqOpen=true;sheetOpen=true;$('scrim').classList.add('on');$('faqSheet').classList.add('on');$('faqSheet').setAttribute('aria-hidden','false');
   gsap.fromTo('#faqSheet .sh-scroll > *',{y:24,opacity:0},{y:0,opacity:1,duration:.9,ease:'expo.out',stagger:.05,delay:.15});}
 function closeFaq(){if(!faqOpen)return;faqOpen=false;sheetOpen=false;$('scrim').classList.remove('on');$('faqSheet').classList.remove('on');$('faqSheet').setAttribute('aria-hidden','true')}
+document.querySelectorAll('.glang button').forEach(b=>b.onclick=()=>{const hi=b.dataset.gl==='hi';document.querySelectorAll('.glang button').forEach(x=>x.classList.toggle('on',x===b));document.querySelector('.guide-hi').hidden=!hi;document.querySelector('.guide-en').hidden=hi;$('faqH').innerHTML=hi?'कैसे इस्तेमाल करें। <span>जार्विस और अल्ट्रॉन।</span>':'How to use. <span>Jarvis &amp; Ultron.</span>'});
 $('lnFaq').onclick=openFaq;$('footFaq').onclick=openFaq;
 let fdOpen=false,fdOrbOn=false;
 function openFd(){closeSheet();closeFaq();fdOpen=true;sheetOpen=true;const f=$('fd');f.classList.add('on');f.setAttribute('aria-hidden','false');f.scrollTop=0;
