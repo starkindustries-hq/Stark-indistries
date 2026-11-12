@@ -794,7 +794,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
     D.getElementById('sjStatus').lastChild.textContent='READY';
     D.getElementById('sjVer').textContent='Version '+(j.version||'1.0');
     D.getElementById('sjNote').textContent=(j.notes||'Android 8 or newer.')+(j.size?' · '+j.size:'');
-    btn.textContent='Download Jarvis.apk';btn.href=j.file;btn.setAttribute('download','Jarvis.apk');btn.removeAttribute('aria-disabled');
+    btn.textContent='Download Jarvis.apk';btn.href=j.file+'?v='+encodeURIComponent(j.version||Date.now());btn.setAttribute('download','Jarvis.apk');btn.removeAttribute('aria-disabled');
     if(j.sha256){const s=D.getElementById('sjSha');s.hidden=false;s.textContent='SHA-256 '+j.sha256}
   }).catch(()=>{});
   D.getElementById('sjBtn').addEventListener('click',e=>{if(box.dataset.state!=='live'){e.preventDefault()}});
@@ -821,7 +821,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
     D.getElementById('ulStatus').lastChild.textContent='READY';
     D.getElementById('ulVer').textContent='Version '+(j.version||'1.0');
     D.getElementById('ulNote').textContent=(j.notes||'Android 8 or newer.')+(j.size?' · '+j.size:'');
-    btn.textContent='Download Ultron.apk';btn.href=j.file;btn.setAttribute('download','Ultron.apk');btn.removeAttribute('aria-disabled');
+    btn.textContent='Download Ultron.apk';btn.href=j.file+'?v='+encodeURIComponent(j.version||Date.now());btn.setAttribute('download','Ultron.apk');btn.removeAttribute('aria-disabled');
     if(j.sha256){const s=D.getElementById('ulSha');s.hidden=false;s.textContent='SHA-256 '+j.sha256}
   }).catch(()=>{});
   D.getElementById('ulBtn').addEventListener('click',e=>{if(box.dataset.state!=='live'){e.preventDefault()}});
