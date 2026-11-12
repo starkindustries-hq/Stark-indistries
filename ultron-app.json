@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.19",
-  "size": "87MB",
-  "sha256": "a479ae0537a1cd426874bcf1fbe81493f2b084afcc7cf45e09015e93d9a708ac",
-  "notes": "Android 8 or newer. English + Hindi. Includes offline voice.",
-  "whats_new": "Short, quick answers. STARK-1 brain talks instantly, reads websites and learns about you."
+  "version": "1.0.24",
+  "size": "90MB",
+  "sha256": "51a22a88a5261cbf63458564da80c150cdfa559d78e7403f4c405e4d1370ac28",
+  "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
+  "whats_new": "Safer and faster: never acts on its own voice, calls need the wake word, quicker replies, \"Yes boss\" on wake, and the new offline brain."
 }
