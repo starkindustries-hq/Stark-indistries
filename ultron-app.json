@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "size": "90MB",
-  "sha256": "5f7b684e7e6d183c7567122137a0b726c980bf50832622d06c7a7ce12e72ce1d",
+  "sha256": "9885d7c838554657d4c9b36018f8c10bd0e522f82d6f777c026c6adb47bf9e20",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: smarter hearing (no 'say that again' when you stay silent, media sensor, soft listening tick), calls fixed (instant name, answer/reject by voice, auto speaker), voice rules, Connected apps, offline calculator, camera eyes ('open camera' and ask what it sees) and a complete shut down."
+  "whats_new": "Fixes: Ultron never listens when Hands-free is off (no more talking to himself or opening Google/Instagram by itself), 'don't open X' blocks that app, 'play music' asks which app to use, Hands-free comes back after FRIDAY, FRIDAY stays in sync with Jarvis."
 }

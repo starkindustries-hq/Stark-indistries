@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.58",
+  "version": "1.0.59",
   "size": "90MB",
-  "sha256": "fce213bd1191767a5424355d20981b49152ba708d44b4defc87be3c94a81655d",
+  "sha256": "c7f223516b164f06cadd4fe97dcc4a2a80186c7865672b1646c2859438a42c72",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: smarter hearing (no 'say that again' when you stay silent, media sensor so videos saying Jarvis don't wake it, soft listening tick), calls fixed (instant name, answer/reject by voice, speaker turns on when you answer), voice rules ('whenever I say play music, open Play Tune'), Connected apps, offline calculator, camera eyes ('open camera' and ask what it sees) and a complete shut down."
+  "whats_new": "Fixes: never listens when Hands-free is off (no more opening apps by itself), 'don't open X' / 'why are you opening X' now blocks that app instead of opening it, 'play music' asks which app to use (link it in Connected apps), FRIDAY stays in sync between Jarvis and Ultron."
 }
