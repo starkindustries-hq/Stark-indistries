@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.57",
+  "version": "1.0.58",
   "size": "90MB",
-  "sha256": "4d5bd20cfc1dce407a50ec0f778376e8c5bf11ee8bb45ede74689b95579ec4e1",
+  "sha256": "fce213bd1191767a5424355d20981b49152ba708d44b4defc87be3c94a81655d",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: smart sensors on every feature (voice, hearing, AI, opening apps, screen analysis, Busy mode, messages, FRIDAY) that fix problems by themselves. Screen recordings now capture Jarvis's voice. A golden black hole background, plus the caller-name sensor."
+  "whats_new": "New: smarter hearing (no 'say that again' when you stay silent, media sensor so videos saying Jarvis don't wake it, soft listening tick), calls fixed (instant name, answer/reject by voice, speaker turns on when you answer), voice rules ('whenever I say play music, open Play Tune'), Connected apps, offline calculator, camera eyes ('open camera' and ask what it sees) and a complete shut down."
 }

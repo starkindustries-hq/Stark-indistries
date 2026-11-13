@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "size": "90MB",
-  "sha256": "679116b30e0bf9bcc0b1607a9ede738329ccbd4ab893d99fcf786115d6cbd27b",
+  "sha256": "5f7b684e7e6d183c7567122137a0b726c980bf50832622d06c7a7ce12e72ce1d",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "New: smart sensors on every feature (voice, hearing, AI, opening apps, screen analysis, Busy mode, messages, FRIDAY) that fix problems by themselves. Screen recordings now capture Ultron's voice. A golden black hole background, plus the caller-name sensor."
+  "whats_new": "New: smarter hearing (no 'say that again' when you stay silent, media sensor, soft listening tick), calls fixed (instant name, answer/reject by voice, auto speaker), voice rules, Connected apps, offline calculator, camera eyes ('open camera' and ask what it sees) and a complete shut down."
 }
