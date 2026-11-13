@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.53",
+  "version": "1.0.62",
   "size": "90MB",
-  "sha256": "9885d7c838554657d4c9b36018f8c10bd0e522f82d6f777c026c6adb47bf9e20",
+  "sha256": "d6ba96930d2994062f0b82a8520111faa6cdb2c9b049770d2bf881629ca8cdf0",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Fixes: Ultron never listens when Hands-free is off (no more talking to himself or opening Google/Instagram by itself), 'don't open X' blocks that app, 'play music' asks which app to use, Hands-free comes back after FRIDAY, FRIDAY stays in sync with Jarvis."
+  "whats_new": "Tested on a phone emulator: Ultron's wake word no longer fires on noise, noise is never turned into opening apps, instant 'Yes boss', Powerful brain by default, 'Instagram' no longer reads the phone status. Caller name spoken 0.1-0.7 s after the ring, loud, never after you answer. FRIDAY stays in sync."
 }
