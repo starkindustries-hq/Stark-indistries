@@ -1,8 +1,8 @@
 {
   "file": "Jarvis.apk",
-  "version": "1.0.68",
+  "version": "1.0.102",
   "size": "90MB",
-  "sha256": "53ff9517419e7622eddfa3c0f21e781d079a9cb7d413985b16abd4aff0428b2a",
+  "sha256": "641de4616f12c69952548334d92813f0ec18337fbf4774b039b30a8b5851d885",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Tested on a phone emulator with real fake calls: caller name spoken 0.1-0.5 s after the ring and loud enough (it was playing at ringtone-low volume), never announces again after you answer, never stuck silent on the next call. Voice answer/reject tested. Power icon fixed. FRIDAY partner check is faster."
+  "whats_new": "Tested on a phone emulator, every check passing: NEW 'wake me up after 4 min' / 'remind me in 10 min to X' / 'set an alarm for 6 am' (Jarvis wakes you himself, loud, until you say I'm up). Fixed: silent 'Yes boss' (media volume stuck low), 'Listening' with no reply, apps opening by themselves (AI invented commands from silence), reel/video voices waking it, caller name late or after answering. FRIDAY: one Hands-free switch for both apps."
 }

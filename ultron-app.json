@@ -1,8 +1,8 @@
 {
   "file": "Ultron.apk",
-  "version": "1.0.62",
+  "version": "1.0.97",
   "size": "90MB",
-  "sha256": "d6ba96930d2994062f0b82a8520111faa6cdb2c9b049770d2bf881629ca8cdf0",
+  "sha256": "0df0601d78893ebbf2ad085637f751b6fd2ef8591632c5d2900a58bceafb3f6f",
   "notes": "Android 8 or newer (64-bit). English + Hindi. Includes offline voice.",
-  "whats_new": "Tested on a phone emulator: Ultron's wake word no longer fires on noise, noise is never turned into opening apps, instant 'Yes boss', Powerful brain by default, 'Instagram' no longer reads the phone status. Caller name spoken 0.1-0.7 s after the ring, loud, never after you answer. FRIDAY stays in sync."
+  "whats_new": "Tested on a phone emulator, all checks passing: NEW 'wake me up after 4 min' / reminders / alarms (Ultron wakes you himself: 'Boss, wake uppp!'). Fixed: silent 'Yes boss', endless 'Listening', apps opening by themselves (AI invented commands from silence), reels waking it, caller name late or after answering, 'Instagram' reading phone status. Obeys the boss's commands. FRIDAY in sync."
 }
