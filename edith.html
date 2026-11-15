@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#050607">
+<title>E.D.I.T.H. · Stark Industries Support Agent</title>
+<meta name="description" content="E.D.I.T.H. is the Stark Industries support agent. It fixes Jarvis and Ultron problems step by step, checks your app is genuine and spots scams, all on your own phone. Nothing you type leaves the page.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050607;--fg:#f2f4f5;--mute:rgba(242,244,245,.56);--faint:rgba(242,244,245,.12);--hair:rgba(242,244,245,.09);
+--amb:#ffb547;--ok:#4be3a5;--warn:#ff5a4f;--sans:'Inter Tight',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+--pad:clamp(16px,4vw,56px);--ease:cubic-bezier(.2,.7,.1,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--amb);color:#000}
+button,input,textarea{font:inherit;color:inherit;background:none;border:0;-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit}
+.mono{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;font-size:11px}
+.top{position:fixed;inset:0 0 auto;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(13px + env(safe-area-inset-top)) var(--pad) 13px;background:rgba(5,6,7,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+.top a{text-decoration:none}
+.back{color:var(--mute);transition:color .3s}.back:hover{color:var(--fg)}
+.live{display:inline-flex;gap:8px;align-items:center;color:var(--ok)}
+.live i{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:blink 2.4s infinite}
+@keyframes blink{50%{opacity:.35}}
+section{scroll-margin-top:70px}
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden}
+#orb{position:absolute;inset:0;width:100%;height:100%}
+.hero-copy{position:relative;text-align:center;padding:0 var(--pad);margin-top:42vh}
+.kicker{color:var(--amb)}
+h1{font-size:clamp(54px,13vw,168px);font-weight:600;letter-spacing:-.045em;line-height:.9;margin:14px 0 18px}
+h1 .ch{display:inline-block;opacity:0}
+h1 .dot{color:var(--amb)}
+.sub{max-width:540px;margin:0 auto;color:var(--mute);font-size:clamp(15px,1.7vw,19px)}
+.go{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:15px 22px;border-radius:99px;background:var(--fg);color:#000;font-weight:600;text-decoration:none;transition:transform .4s var(--ease),background .3s}
+.go:hover{transform:translateY(-2px);background:var(--amb)}
+.fade{opacity:0;transform:translateY(14px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.ready .fade{opacity:1;transform:none}
+.ready .d1{transition-delay:.4s}.ready .d2{transition-delay:1s}.ready .d3{transition-delay:1.3s}
+.state{position:absolute;left:50%;transform:translateX(-50%);top:calc(33% + 18vh);color:var(--amb);opacity:.8}
+@media(min-width:761px){.state{top:calc(30% + 24vh)}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.agent-sec{padding:clamp(40px,8vw,110px) 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+h2{font-size:clamp(34px,5.6vw,72px);font-weight:500;letter-spacing:-.035em;line-height:1}
+h2 span{color:var(--mute)}
+.head p{max-width:380px;color:var(--mute)}
+.console{display:grid;grid-template-columns:1fr 330px;border:1px solid var(--hair);border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#08090b,#050607)}
+.chat{display:flex;flex-direction:column;min-height:620px;max-height:78vh;border-right:1px solid var(--hair)}
+.chat-top{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--hair)}
+.av{width:34px;height:34px;border-radius:50%;position:relative;flex:none;background:radial-gradient(circle at 40% 35%,#ffe2b0,#ffb547 40%,#7a4a10 75%,#1a1206);box-shadow:0 0 18px rgba(255,181,71,.35)}
+.av:after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(255,181,71,.4);animation:ring 2.8s var(--ease) infinite}
+.think .av:after{animation-duration:.9s;border-color:var(--amb)}
+.speak .av{animation:talk .45s ease-in-out infinite alternate}
+@keyframes ring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+@keyframes talk{to{transform:scale(1.08);box-shadow:0 0 30px rgba(255,181,71,.6)}}
+.who b{display:block;font-weight:600;letter-spacing:.02em}
+.who .st{color:var(--amb)}
+.priv{margin-left:auto;color:var(--ok);display:flex;gap:6px;align-items:center}
+.msgs{flex:1;overflow-y:auto;padding:22px 18px 10px;display:flex;flex-direction:column;gap:14px;overscroll-behavior:contain}
+.m{max-width:86%;animation:pop .45s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}}
+.m.bot{align-self:flex-start}
+.m.me{align-self:flex-end;background:var(--fg);color:#000;padding:11px 15px;border-radius:18px 18px 4px 18px;word-break:break-word}
+.bubble{background:#111418;border:1px solid var(--hair);padding:14px 16px;border-radius:4px 18px 18px 18px}
+.bubble p{color:#e3e7ea}
+.bubble p+p{margin-top:8px}
+.tag{display:inline-flex;align-items:center;gap:7px;padding:4px 9px;border-radius:6px;border:1px solid;margin-bottom:9px}
+.tag i{width:5px;height:5px;border-radius:50%;background:currentColor}
+.tag.fact{color:var(--ok);border-color:rgba(75,227,165,.35);background:rgba(75,227,165,.06)}
+.tag.guide{color:var(--amb);border-color:rgba(255,181,71,.35);background:rgba(255,181,71,.06)}
+.tag.alert{color:var(--warn);border-color:rgba(255,90,79,.4);background:rgba(255,90,79,.07)}
+.step{color:var(--amb);margin-right:6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.opt{padding:10px 14px;border:1px solid var(--faint);border-radius:99px;font-size:14px;transition:all .3s var(--ease);text-align:left}
+.opt:hover{border-color:var(--amb);color:var(--amb)}
+.opt.yes{border-color:rgba(75,227,165,.45);color:var(--ok)}
+.opt:disabled{opacity:.35;pointer-events:none}
+.dots{display:inline-flex;gap:5px;padding:16px 18px;background:#111418;border:1px solid var(--hair);border-radius:4px 18px 18px 18px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--amb);animation:dot 1s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-4px)}}
+.tool{margin-top:12px;display:grid;gap:10px}
+.drop{display:grid;place-items:center;gap:6px;padding:22px;border:1px dashed rgba(255,181,71,.45);border-radius:14px;text-align:center;color:var(--mute);cursor:pointer;transition:background .3s}
+.drop:hover{background:rgba(255,181,71,.05)}
+.drop b{color:var(--fg);font-weight:500}
+.bar{height:4px;border-radius:4px;background:var(--faint);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--amb);transition:width .2s}
+textarea.ta{width:100%;min-height:110px;resize:vertical;padding:12px;border:1px solid var(--faint);border-radius:12px;background:#07090b;font-size:16px;line-height:1.45}
+textarea.ta:focus,.in input:focus{outline:none;border-color:var(--amb)}
+.act{justify-self:start;padding:11px 16px;border-radius:99px;background:var(--fg);color:#000;font-weight:600}
+.act:hover{background:var(--amb)}
+.ok{color:var(--ok)}
+.sum{font-family:var(--mono);font-size:12px;white-space:pre-wrap;background:#07090b;border:1px solid var(--faint);border-radius:12px;padding:12px;color:#cfd5da}
+.in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--hair);background:#07080a}
+.in input{flex:1;min-width:0;padding:13px 15px;border:1px solid var(--faint);border-radius:99px;background:#0b0d10;font-size:16px}
+.send{width:46px;height:46px;flex:none;border-radius:50%;background:var(--amb);color:#000;display:grid;place-items:center;font-size:18px;font-weight:700;transition:transform .3s var(--ease)}
+.send:active{transform:scale(.92)}
+.note{padding:0 14px 12px;background:#07080a;color:var(--mute);font-size:11px}
+.side{display:flex;flex-direction:column;min-height:0}
+.side h4{padding:16px 18px;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;color:var(--mute);font-weight:400}
+.log{flex:1;overflow-y:auto;padding:14px 18px;font-family:var(--mono);font-size:11.5px;line-height:1.7;color:#9aa6b2;max-height:360px}
+.log div{animation:pop .35s both}
+.log .t{color:#55606b;margin-right:8px}
+.log .a{color:var(--amb)}.log .g{color:var(--ok)}.log .r{color:var(--warn)}
+.meters{border-top:1px solid var(--hair);padding:16px 18px;display:grid;gap:14px}
+.meter{display:flex;justify-content:space-between;align-items:baseline}
+.meter b{font-weight:500;font-size:20px;letter-spacing:-.02em}
+.meter b.g{color:var(--ok)}
+.meter b em{font-style:normal;color:var(--amb)}
+.trust-sec{padding:clamp(50px,9vw,120px) 0}
+.trust{display:grid;grid-template-columns:1.25fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:22px;overflow:hidden}
+.cell{background:var(--bg);padding:clamp(22px,3.4vw,44px)}
+.cell h3{font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-.02em;margin:12px 0 10px}
+.cell p{color:var(--mute);max-width:440px}
+.cell .k{color:var(--amb)}
+.fp{margin-top:18px;font-family:var(--mono);font-size:12px;line-height:1.9;color:#cfd5da;word-break:break-all;padding:14px;border:1px solid var(--faint);border-radius:12px}
+.pill{display:inline-flex;margin-top:12px;padding:10px 14px;border:1px solid var(--faint);border-radius:99px;transition:all .3s;text-decoration:none}
+.pill:hover{border-color:var(--amb);color:var(--amb)}
+.never{display:grid;gap:12px;margin-top:18px}
+.never div{display:flex;gap:12px;align-items:baseline;color:#d9dee2}
+.never div:before{content:"✕";color:var(--warn);font-size:12px}
+.tall{grid-row:span 2}
+.cta{display:inline-flex;gap:10px;margin-top:20px;padding:13px 19px;border-radius:99px;background:var(--fg);color:#000;text-decoration:none;font-weight:600;transition:background .3s}
+.cta:hover{background:var(--amb)}
+footer{border-top:1px solid var(--hair);padding:30px var(--pad) calc(30px + env(safe-area-inset-bottom));display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}.rv.in{opacity:1;transform:none}
+@media (max-width:900px){
+ .console{grid-template-columns:1fr}
+ .chat{border-right:0;border-bottom:1px solid var(--hair);min-height:560px;max-height:82svh}
+ .log{max-height:220px}
+ .trust{grid-template-columns:1fr}.tall{grid-row:auto}
+ .hero-copy{margin-top:36vh}
+ .m{max-width:94%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.fade,h1 .ch{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+ <a class="back mono" href="./">← Stark HQ</a>
+ <span class="live mono"><i></i>E.D.I.T.H. online</span>
+</header>
+
+<section class="hero" aria-label="E.D.I.T.H.">
+ <canvas id="orb" aria-hidden="true"></canvas>
+ <div class="state mono" id="orbState">● Standby</div>
+ <div class="hero-copy">
+  <div class="kicker mono fade d1">Stark Industries · Support agent</div>
+  <h1 id="title" aria-label="E.D.I.T.H.">E<span class="dot">.</span>D<span class="dot">.</span>I<span class="dot">.</span>T<span class="dot">.</span>H<span class="dot">.</span></h1>
+  <p class="sub fade d2">Tell it what's wrong. It fixes it with you step by step, checks your app is real and spots scams. It runs on your phone, so nothing you type ever leaves this page.</p>
+  <a class="go fade d3" href="#agent">Start fixing →</a>
+ </div>
+</section>
+
+<section class="agent-sec" id="agent">
+ <div class="wrap">
+  <div class="head rv">
+   <h2>Ask <span>E.D.I.T.H.</span></h2>
+   <p>Every answer is marked <b class="ok" style="font-weight:500">Fact</b> (checked against our build records) or <b style="color:var(--amb);font-weight:500">Guidance</b> (advice). If it doesn't know, it says so.</p>
+  </div>
+  <div class="console rv" id="console">
+   <div class="chat">
+    <div class="chat-top">
+     <div class="av" aria-hidden="true"></div>
+     <div class="who"><b>E.D.I.T.H.</b><span class="mono st" id="st">Standby</span></div>
+     <div class="priv mono">🔒 On-device</div>
+    </div>
+    <div class="msgs" id="msgs" aria-live="polite"></div>
+    <form class="in" id="form" autocomplete="off">
+     <input id="q" maxlength="300" placeholder="Describe the problem… (English or Hinglish)" aria-label="Describe your problem" autocomplete="off">
+     <button class="send" aria-label="Send">↑</button>
+    </form>
+    <div class="note">Don't type passwords, OTPs or phone numbers. E.D.I.T.H. never needs them, and nothing is sent or saved.</div>
+   </div>
+   <aside class="side">
+    <h4 class="mono"><span>Live log</span><span id="clock">--:--</span></h4>
+    <div class="log" id="log"></div>
+    <div class="meters">
+     <div class="meter"><span class="mono">Your words sent</span><b class="g">0 bytes</b></div>
+     <div class="meter"><span class="mono">Jarvis</span><b id="vj">v<em>—</em></b></div>
+     <div class="meter"><span class="mono">Ultron</span><b id="vu">v<em>—</em></b></div>
+     <div class="meter"><span class="mono">Cookies · trackers</span><b class="g">None</b></div>
+    </div>
+   </aside>
+  </div>
+ </div>
+</section>
+
+<section class="trust-sec" id="trust">
+ <div class="wrap">
+  <div class="head rv"><h2>Trust <span>&amp; safety</span></h2><p>How to know the app you're installing is really ours.</p></div>
+  <div class="trust rv">
+   <div class="cell tall">
+    <span class="mono k">01 · Signature</span>
+    <h3>Every official app carries this fingerprint.</h3>
+    <p>Android checks it on every install and update. A copy with a different signature can never replace the real one.</p>
+    <div class="fp" id="fp">F5:6D:60:CE:54:E9:4F:6D:F7:37:AE:37:0B:8A:40:92:A1:1A:4E:B7:A7:8F:81:2F:25:53:FD:89:69:FC:20:68</div>
+    <button class="pill mono" id="copyfp">Copy fingerprint</button>
+   </div>
+   <div class="cell">
+    <span class="mono k">02 · Official source</span>
+    <h3>One home. That's it.</h3>
+    <p>Jarvis and Ultron are only published on this website. Not on Telegram, not in DMs, not on mirror sites.</p>
+    <a class="cta" href="./">Go to downloads →</a>
+   </div>
+   <div class="cell">
+    <span class="mono k">03 · We will never</span>
+    <div class="never"><div>Ask for your password, OTP or PIN</div><div>Ask for money; both apps are free</div><div>Send you an app file in a DM</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer class="mono"><span>© Stark Industries · India</span><span>No cookies · nothing sent · no trackers</span></footer>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s);
+const OFFICIAL='./';
+const IG='https://ig.me/m/projectstark.in';
+const APP={jarvis:{v:'',sha:''},ultron:{v:'',sha:''}};
+let topic='General question',tried=[],busy=false;
+
+/* live log */
+const logEl=$('#log');
+const ts=()=>new Date().toTimeString().slice(0,8);
+function log(t,c){const d=document.createElement('div');const a=document.createElement('span');a.className='t';a.textContent=ts();const s=document.createElement('span');if(c)s.className=c;s.textContent=t;d.append(a,s);logEl.appendChild(d);logEl.scrollTop=logEl.scrollHeight;while(logEl.children.length>80)logEl.firstChild.remove()}
+setInterval(()=>$('#clock').textContent=ts().slice(0,5),1000);
+
+/* orb state */
+function setState(s){window.orbMode=s;const l={standby:'Standby',thinking:'Thinking',speaking:'Speaking'}[s];$('#st').textContent=l;$('#orbState').textContent='● '+l;const c=$('#console');c.classList.toggle('think',s==='thinking');c.classList.toggle('speak',s==='speaking')}
+
+/* official versions (same-site files only) */
+function loadApp(k,f,id){return fetch(f+'?v='+Date.now(),{cache:'no-store',credentials:'omit'}).then(r=>r.json()).then(j=>{APP[k].v=String(j.version||'').replace(/[^0-9.]/g,'');APP[k].sha=String(j.sha256||'').toLowerCase().replace(/[^0-9a-f]/g,'');if(APP[k].v)$('#'+id+' em').textContent=APP[k].v}).catch(()=>{})}
+const ready=Promise.all([loadApp('jarvis','jarvis-app.json','vj'),loadApp('ultron','ultron-app.json','vu')]).then(()=>log('official build records loaded (Jarvis v'+(APP.jarvis.v||'?')+', Ultron v'+(APP.ultron.v||'?')+')','g'));
+const V=()=>APP.jarvis.v||'latest';
+
+/* messages */
+const msgs=$('#msgs');
+function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+const scroll=()=>{msgs.scrollTop=msgs.scrollHeight};
+function userSay(t){msgs.appendChild(el('div','m me',t));scroll()}
+function lockOpts(){msgs.querySelectorAll('.opt').forEach(b=>b.disabled=true)}
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+async function typeInto(p,text){if(RM){p.textContent=text;return}for(let i=0;i<=text.length;i+=3){p.textContent=text.slice(0,i);if(i%30===0)scroll();await wait(9)}p.textContent=text}
+async function say(o){
+ busy=true;lockOpts();setState('thinking');
+ const d=el('div','m bot');const dots=el('div','dots');dots.innerHTML='<i></i><i></i><i></i>';d.appendChild(dots);msgs.appendChild(d);scroll();
+ await wait(380+Math.min(500,(o.lines||[]).join(' ').length*2));
+ dots.remove();setState('speaking');window.orbPulse&&orbPulse();
+ const b=el('div','bubble');d.appendChild(b);
+ if(o.tag){const tg=el('span','tag mono '+o.tag);tg.appendChild(el('i'));tg.append({fact:'Verified fact',guide:'Guidance',alert:'Warning'}[o.tag]);b.appendChild(tg)}
+ for(const [i,l] of (o.lines||[]).entries()){const p=el('p');if(i===0&&o.step)p.appendChild(el('span','step mono','Step '+o.step));const t=el('span');p.appendChild(t);b.appendChild(p);await typeInto(t,l)}
+ if(o.tool){const tw=el('div','tool');b.appendChild(tw);o.tool(tw)}
+ if(o.opts&&o.opts.length){const w=el('div','opts');o.opts.forEach(([lab,fn,cls])=>{const x=el('button','opt'+(cls?' '+cls:''),lab);x.type='button';x.onclick=()=>{lockOpts();userSay(lab);if(o.menu)tried=[];fn()};w.appendChild(x)});b.appendChild(w)}
+ scroll();setState('standby');busy=false;
+}
+const fixed=next=>[['✓ That fixed it',done,'yes'],['Still not working',next]];
+const back=()=>['Something else',menu];
+
+/* flows */
+function menu(){topic='General question';tried=[];
+ say({menu:1,lines:['What do you need help with? Pick one, or describe it in your own words below.'],opts:[
+  ['🎙️ It can\'t hear me',hear1],['📥 Can\'t install',install1],['🛡️ Is my app real?',verify],['📱 Will it work on my phone?',phone],
+  ['⚠️ I got a suspicious message',scam],['🔵 The floating orb',orb1],['⏰ Reminders don\'t ring',remind1],['🐢 Slow / "lost connection"',slow1],
+  ['🧠 Memory & privacy',memory],['👤 Talk to a human',human]]})}
+function done(){log('resolved: '+topic,'g');tried.push('fixed');say({tag:'fact',lines:['Glad that\'s fixed. If anything else acts up, I\'m right here.'],opts:[back()]})}
+
+function hear1(){topic='Assistant can\'t hear me / doesn\'t wake';log('flow: wake-word troubleshooter (5 steps)','a');
+ say({tag:'fact',step:'1/5',lines:['Let\'s fix it. Is "Hands-free (always listening)" switched on inside the app?'],opts:[['Yes, it\'s on',hear2],['No / not sure',()=>{tried.push('turned on Hands-free');say({tag:'guide',lines:['Open Jarvis (or Ultron), switch on "Hands-free (always listening)", then say "Hey Jarvis" or "Hey Ultron".'],opts:fixed(hear2)})}]]})}
+function hear2(){tried.push('microphone permission');say({tag:'fact',step:'2/5',lines:['It needs the microphone. Open Settings → Apps → Jarvis → Permissions → Microphone → Allow.'],opts:[...fixed(hear3),['Already allowed',hear3]]})}
+function hear3(){tried.push('battery unrestricted');say({tag:'guide',step:'3/5',lines:['Android may be putting it to sleep to save battery. Settings → Apps → Jarvis → Battery → "Unrestricted" (some phones call it "Don\'t optimise").'],opts:fixed(hear4)})}
+function hear4(){tried.push('said name close to phone');say({tag:'fact',step:'4/5',lines:['Say its name close to the phone at normal volume. A built-in guard ignores quiet, far-away voices so strangers in public can\'t wake it.','"Hey Jarvis" or "Hey Ultron" wakes it fastest. It only wakes on its own name.'],opts:fixed(hear5)})}
+function hear5(){tried.push('checked version');say({tag:'fact',step:'5/5',lines:['Make sure you have the newest version: Jarvis v'+V()+(APP.ultron.v?', Ultron v'+APP.ultron.v:'')+'. If yours is older, download it again from this site. Your memory comes back automatically.'],opts:fixed(human)})}
+
+function install1(){topic='Can\'t install the app';log('flow: install troubleshooter','a');
+ say({lines:['What happens when you try to install?'],opts:[
+  ['"Install blocked" / unknown apps',()=>{tried.push('allowed install from browser');say({tag:'fact',lines:['Android blocks apps from outside the Play Store until you allow it once. On the pop-up tap Settings → turn on "Allow from this source" for your browser → go back → Install.'],opts:fixed(install1)})}],
+  ['"App not installed" error',()=>{tried.push('removed old copy, freed storage');say({tag:'fact',lines:['That usually means an old copy signed by someone else is on the phone, or storage is full.','Uninstall the old Jarvis/Ultron, free about 200 MB, then install again. If that old copy came from another website, Android blocked it to protect you.'],opts:fixed(verify)})}],
+  ['Play Protect warning',()=>{tried.push('Play Protect warning');say({tag:'guide',lines:['Play Protect warns about apps it hasn\'t seen in the Play Store. First check your file is genuine (I can do that right here). If it is, tap "More details" → "Install anyway".'],opts:[['Check my file',verify],back()]})}],
+  ['Download won\'t start / stops',()=>{tried.push('download in Chrome');say({tag:'guide',lines:['Use Chrome, keep about 200 MB free, and stay on the page until it finishes. The file is around 90 MB, so Wi-Fi is easier.'],opts:fixed(human)})}]]})}
+
+function verify(){topic='Is my app genuine?';log('tool: on-device app checker','a');
+ say({tag:'fact',lines:['Pick the Jarvis or Ultron file you downloaded (usually in Downloads). I\'ll fingerprint it right here and compare it with our official build. The file is never uploaded.'],tool:w=>{
+  const lab=el('label','drop');lab.appendChild(el('b',null,'Choose the .apk file'));lab.appendChild(el('span','mono','Stays on your phone'));
+  const inp=el('input');inp.type='file';inp.accept='.apk,application/vnd.android.package-archive';inp.hidden=true;lab.appendChild(inp);
+  const bar=el('div','bar');bar.appendChild(el('i'));bar.hidden=true;w.append(lab,bar);
+  inp.onchange=async()=>{const f=inp.files[0];if(!f)return;lockOpts();userSay('📦 '+f.name);bar.hidden=false;setState('thinking');
+   log('reading '+(f.size/1048576).toFixed(1)+' MB on this device…','a');
+   try{
+    if(f.size>300*1048576)throw 0;
+    const fr=new FileReader();fr.onprogress=e=>{if(e.lengthComputable)bar.firstChild.style.width=(e.loaded/e.total*80)+'%'};
+    const buf=await new Promise((ok,no)=>{fr.onload=()=>ok(fr.result);fr.onerror=no;fr.readAsArrayBuffer(f)});
+    const t0=performance.now();const h=await crypto.subtle.digest('SHA-256',buf);bar.firstChild.style.width='100%';
+    const hex=[...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('');
+    log('sha-256 '+hex.slice(0,16)+'… in '+Math.round(performance.now()-t0)+' ms','a');await ready;
+    const hit=APP.jarvis.sha&&hex===APP.jarvis.sha?'Jarvis v'+APP.jarvis.v:APP.ultron.sha&&hex===APP.ultron.sha?'Ultron v'+APP.ultron.v:null;
+    if(hit){log('match: official '+hit,'g');tried.push('file verified genuine');
+     say({tag:'fact',lines:['✅ Genuine. This is the official '+hit+', exactly as we published it. Safe to install.'],opts:[['How do I install it?',install1],back()]})}
+    else{log('no match with the current official builds','r');tried.push('file did not match current build');
+     say({tag:'alert',lines:['This file does not match our current official build.','If you downloaded it from this site a while ago, it may just be an older version: download it again. If it came from anywhere else (a DM, Telegram, another site), delete it and don\'t install it.'],opts:[['Get the official one',()=>location.href=OFFICIAL],back()]})}
+   }catch(e){log('could not read the file','r');say({tag:'guide',lines:['I couldn\'t read that file on this phone. Try again from your Downloads folder, or use Chrome.'],opts:[['Try again',verify],back()]})}
+  }}})}
+
+async function phone(){topic='Will it work on my phone?';log('tool: phone check (reads browser info on this device)','a');
+ const ua=navigator.userAgent;let os='',ver=0,bits='',model='';
+ try{const u=navigator.userAgentData;if(u&&u.getHighEntropyValues){const h=await u.getHighEntropyValues(['platformVersion','bitness','model']);if(u.platform==='Android'){os='Android';ver=parseFloat(h.platformVersion)||0}bits=h.bitness||'';model=h.model||''}}catch(e){}
+ if(!os){const m=ua.match(/Android\s([0-9.]+)/);if(m){os='Android';ver=parseFloat(m[1])}else if(/iPhone|iPad|iPod/.test(ua))os='iOS';else os='Computer'}
+ log('detected: '+os+(ver?' '+ver:'')+(bits?' · '+bits+'-bit':'')+(model?' · '+model:''),'a');
+ let lines,tag='fact';
+ if(os==='iOS')lines=['You\'re on an iPhone or iPad. Jarvis and Ultron are Android-only for now, so they won\'t install here.'];
+ else if(os==='Computer')lines=['You\'re on a computer. Open this page on your Android phone and I\'ll check it there.'];
+ else if(ver&&ver<8)lines=['Your phone runs Android '+ver+'. Jarvis and Ultron need Android 8 or newer, so this phone is too old for them.'];
+ else{lines=['✅ Android'+(ver?' '+ver:'')+(model?' ('+model+')':'')+' meets the Android 8+ requirement.'];
+  if(bits==='32'){lines.push('Your phone reports 32-bit. The apps need a 64-bit phone, so they may not install.');tag='alert'}
+  else if(bits==='64')lines.push('64-bit: good to go.');
+  else{lines.push('Your browser doesn\'t tell me whether it\'s 64-bit. Almost every phone from 2019 onward is, but I can\'t confirm yours.');tag='guide'}}
+ say({tag,lines,opts:[['Go to downloads',()=>location.href=OFFICIAL],back()]})}
+
+function scam(){topic='Suspicious message';log('tool: scam check (runs on this device)','a');
+ say({tag:'fact',lines:['Paste the message someone sent you. I\'ll check it here; it isn\'t sent anywhere.'],tool:w=>{
+  const ta=el('textarea','ta');ta.placeholder='Paste the message…';ta.maxLength=3000;const go=el('button','act','Check it');go.type='button';w.append(ta,go);
+  go.onclick=()=>{const t=ta.value.trim();if(!t)return;lockOpts();go.disabled=true;ta.disabled=true;userSay('Check this: "'+(t.length>90?t.slice(0,90)+'…':t)+'"');setState('thinking');
+   const L=t.toLowerCase(),why=[];let s=0;
+   [[/\b(otp|one.?time.?(pass|code)|verification code|pin|password|passcode|cvv)\b/,3,'Asks for an OTP, PIN or password. We never ask for these.'],
+    [/(\bupi\b|paytm|phonepe|gpay|google pay|₹|\brs\.?\s?\d|\binr\b|payment|pay now|\bfee\b|charges|premium|activation|subscription|recharge|refund)/,3,'Talks about money. Jarvis and Ultron are free and we never charge.'],
+    [/(\.apk\b|download (the )?(app|apk)|install (this|the) (app|file))/,1,'Pushes you to install an app file.'],
+    [/(t\.me\/|telegram|whatsapp group|join (our|the) group|wa\.me)/,2,'Moves you to Telegram/WhatsApp. We only publish on our website.'],
+    [/(urgent|immediately|within \d+ ?(min|hour)|expire|blocked|suspend|last chance|limited time|act now)/,1,'Uses pressure ("urgent", "will be blocked").'],
+    [/(screen ?share|anydesk|teamviewer|quick ?support|remote access)/,3,'Asks to control or share your screen.'],
+    [/(you (have )?won|lucky|reward|cashback|gift|prize|lottery)/,2,'Promises a prize or reward.'],
+    [/(bit\.ly|tinyurl|cutt\.ly|is\.gd|shorturl|rb\.gy)/,2,'Uses a hidden short link.']
+   ].forEach(([re,p,m])=>{if(re.test(L)){s+=p;why.push(m)}});
+   (t.match(/https?:\/\/[^\s)]+/gi)||[]).forEach(u=>{let host='';try{host=new URL(u).hostname}catch(e){}if(host&&host!=='starkindustries-hq.github.io'&&!/(^|\.)instagram\.com$|(^|\.)ig\.me$/.test(host)){s+=2;why.push('Links to '+host+', which is not our official website.')}});
+   if(/(stark|jarvis|ultron|friday)/.test(L)&&s>0)why.push('Uses our name, which scammers copy to look real.');
+   log('scam score '+s+' ('+why.length+' signals)',s>=3?'r':'a');
+   const v=s>=3?['alert','🚩 This looks like a SCAM. Don\'t reply, don\'t pay, don\'t install anything from it.']:s>0?['guide','⚠️ Be careful. Some things in it look suspicious.']:['guide','I found no common scam signs, but I can\'t be sure. When in doubt, download only from our website and never share an OTP.'];
+   say({tag:v[0],lines:[v[1],...why.map(x=>'• '+x)],opts:[['Report it to Stark',human],back()]})}}})}
+
+function orb1(){topic='Floating orb';log('flow: floating orb','a');
+ say({tag:'fact',lines:['The orb only appears when Hands-free is on and the app is in the background. What\'s happening?'],opts:[
+  ['It doesn\'t show up',()=>{tried.push('Display over other apps');say({tag:'fact',lines:['Allow it to draw on screen: Settings → Apps → Jarvis → "Display over other apps" → Allow. Then say "floating orb on".'],opts:fixed(human)})}],
+  ['It\'s stuck on screen',()=>{tried.push('force stop, update');say({tag:'fact',lines:['Open the app once; the orb hides when the app opens. If it\'s still there: Settings → Apps → Jarvis → Force stop, then open it again.','Updating to the newest version (v'+V()+') also helps.'],opts:fixed(human)})}],
+  ['Wrong colour',()=>{tried.push('colour');say({tag:'fact',lines:['Blue is Jarvis and red is Ultron. If it\'s the wrong colour, force-stop both apps once and update to the newest version.'],opts:fixed(human)})}]]})}
+
+function remind1(){topic='Reminders/alarms don\'t ring';log('flow: reminders','a');tried.push('alarms permission','battery unrestricted');
+ say({tag:'fact',step:'1/2',lines:['Android needs two permissions for this. Settings → Apps → Jarvis → "Alarms & reminders" → Allow. Then Battery → "Unrestricted".'],opts:fixed(()=>say({tag:'guide',step:'2/2',lines:['Test it: say "remind me in 2 minutes to test". Some phones (Xiaomi, Oppo, Vivo, Realme) also need "Autostart" turned on for the app.'],opts:fixed(human)}))})}
+
+function slow1(){topic='Slow / lost connection';log('flow: speed','a');
+ say({tag:'fact',lines:['"My brain lost the connection" means it couldn\'t reach the internet, or our server was busy for a moment.','Check your data or Wi-Fi and ask again. Phone commands (open apps, alarms, torch) work even offline.'],opts:fixed(()=>{tried.push('checked internet');say({tag:'guide',lines:['Update to v'+V()+'. Answers go through our secure server, which can be busy at peak times. Wait a minute and try again. If it keeps happening, tell us.'],opts:fixed(human)})})})}
+
+function memory(){topic='Memory & privacy';
+ say({tag:'fact',lines:['Your assistant only remembers what you approve. It asks "Should I remember that?" first.','Memory is encrypted with a key tied to your phone. Reinstall on the same phone and it comes back; a new phone starts fresh. Our AI keys live in a locked server vault, never inside the app.'],opts:[back()]})}
+
+function human(){log('handoff: summary prepared (no personal data)','a');
+ const os=(navigator.userAgent.match(/Android\s([0-9.]+)/)||[])[1];
+ const sum='Stark support request (from E.D.I.T.H.)\nProblem: '+topic+'\nAlready tried: '+(tried.filter(x=>x!=='fixed').join(', ')||'nothing yet')+'\nPhone: '+(os?'Android '+os:'not detected')+'\nNewest on site: Jarvis v'+(APP.jarvis.v||'?')+', Ultron v'+(APP.ultron.v||'?');
+ say({tag:'fact',lines:['I\'ll hand you to the Stark team. Here\'s a summary so you don\'t have to explain again. It has no personal details. Copy it and send it to @projectstark.in on Instagram.'],tool:w=>{
+  const p=el('div','sum',sum);const c=el('button','act','Copy summary');c.type='button';
+  c.onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(sum):Promise.reject()).then(()=>{c.textContent='Copied ✓';log('summary copied to your clipboard','g')}).catch(()=>{const r=document.createRange();r.selectNodeContents(p);getSelection().removeAllRanges();getSelection().addRange(r)})};
+  const a=el('a','pill mono','Open Instagram DM →');a.href=IG;a.target='_blank';a.rel='noopener noreferrer';
+  w.append(p,c,a)},opts:[back()]})}
+
+function about(){say({tag:'fact',lines:['Stark Industries is an independent student project from India, founded by Binit Pradhan and Mridul. It isn\'t affiliated with any film studio.','I\'m E.D.I.T.H., its support agent. There\'s no AI model on this page: I understand your words with simple rules running on your phone, so I can\'t see you and I can\'t control anything.'],opts:[back()]})}
+function language(){say({tag:'fact',lines:['Jarvis and Ultron speak English and Hindi. To translate, say "translator mode to Hindi" (or another language), then "normal mode" to stop.'],opts:[back()]})}
+function free(){say({tag:'fact',lines:['Yes, both apps are completely free. No subscription, no "premium version". Anyone asking you to pay is a scammer.'],opts:[['Check a message',scam],back()]})}
+function wake(){say({tag:'fact',lines:['Switch on Hands-free in the app, then say its name: "Jarvis" or "Hey Jarvis", "Ultron" or "Hey Ultron". It only wakes on its own name.'],opts:[['It doesn\'t wake',hear1],back()]})}
+
+/* on-device intent engine */
+const INTENTS=[
+ [hear1,'hear hearing listen listening mic microphone wake waking respond responding reply deaf voice sun sunta sunti suna awaz awaaz aawaz bolta jawab ignore ignores'],
+ [install1,'install installing installed download downloading apk blocked unknown sources parse package play protect storage hota'],
+ [verify,'real fake genuine original legit legitimate virus malware safe trusted official verify file hacked asli nakli'],
+ [phone,'phone compatible compatibility supported android iphone ios mobile device chalega 64 bit samsung redmi oppo vivo realme'],
+ [scam,'scam fraud message sms dm otp payment money upi telegram suspicious link sent whatsapp paise account'],
+ [orb1,'orb floating bubble island dynamic circle overlay colour color'],
+ [remind1,'remind reminder reminders alarm alarms timer ring ringing notification'],
+ [slow1,'slow late lag delay connection internet brain lost error crash crashes crashing busy hang loading'],
+ [memory,'memory remember forget data privacy private personal stored save reinstall encrypt'],
+ [human,'human person team contact support talk report complain email founder'],
+ [about,'who made built founder founders binit mridul company marvel edith'],
+ [language,'hindi language english translate translator bhasha'],
+ [free,'free cost price paid premium charge kitna'],
+ [wake,'how use start hey handsfree hands']
+].map(([f,w])=>[f,w.split(' ')]);
+function lev(a,b){if(Math.abs(a.length-b.length)>1)return 9;const d=[...Array(b.length+1).keys()];for(let i=1;i<=a.length;i++){let p=d[0];d[0]=i;for(let j=1;j<=b.length;j++){const t=d[j];d[j]=Math.min(d[j]+1,d[j-1]+1,p+(a[i-1]===b[j-1]?0:1));p=t}}return d[b.length]}
+function classify(t){
+ const w=t.toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(Boolean);
+ let best=null,score=0,second=0;
+ INTENTS.forEach(([f,k])=>{let s=0;w.forEach(x=>{if(k.includes(x))s+=1;else if(x.length>=5&&k.some(y=>y.length>=5&&lev(x,y)<=1))s+=.7});if(s>score){second=score;score=s;best=f}else if(s>second)second=s});
+ return {f:score>0?best:null,conf:score?Math.min(.99,score/(score+second+.5)):0};
+}
+const NAMES={hear1:'hearing problem',install1:'install problem',verify:'app check',phone:'phone check',scam:'scam check',orb1:'floating orb',remind1:'reminders',slow1:'speed / connection',memory:'memory & privacy',human:'talk to a human',about:'about Stark',language:'languages',free:'price',wake:'how to wake it'};
+const personal=t=>/\b\d{10}\b|\b\d{4,6}\b|@[a-z0-9-]+\.[a-z]{2,}|password|passcode/i.test(t);
+$('#form').addEventListener('submit',e=>{e.preventDefault();const q=$('#q');const t=q.value.trim().slice(0,300);if(!t||busy)return;q.value='';lockOpts();userSay(t);
+ log('understanding on this device ('+t.split(/\s+/).length+' words) · 0 bytes sent','a');
+ if(personal(t)){log('personal detail spotted: not stored','r');say({tag:'alert',lines:['You don\'t need to share numbers, codes or passwords with me, and I never store anything. Keep those private.']}).then(()=>route(t))}else route(t)});
+function route(t){const r=classify(t);
+ if(r.f&&r.conf>.3){tried=[];log('understood: '+(NAMES[r.f.name]||'topic')+' (confidence '+Math.round(r.conf*100)+'%)','g');r.f()}
+ else{log('not sure what that means: asking instead of guessing','r');
+  say({tag:'guide',lines:['I\'m not sure I understood that, and I\'d rather say so than guess. I only know about Stark apps, installing them and staying safe. Which is closest?'],opts:[['It can\'t hear me',hear1],['Can\'t install',install1],['Is my app real?',verify],['Suspicious message',scam],['Talk to a human',human],['Something else',menu]]})}}
+
+/* start */
+let started=false;
+function start(){if(started)return;started=true;log('E.D.I.T.H. started on this device','g');log('network: version files only · no cookies · no trackers','g');
+ say({tag:'fact',lines:['Hi, I\'m E.D.I.T.H., Stark\'s support agent. I run entirely on your phone: nothing you type leaves this page.']}).then(menu)}
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){start();o.disconnect()}},{threshold:.25}).observe($('#console'));
+$('#copyfp').onclick=e=>{const t=$('#fp').textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy fingerprint',1600)}).catch(()=>{})};
+
+/* dot-matrix orb with standby / thinking / speaking */
+(()=>{const c=$('#orb'),x=c.getContext('2d');
+ let W,H,D,R,P=[],t=0,pulse=0,intro=0,spd=1,glow=1;const N=innerWidth<700?900:1500;
+ for(let i=0;i<N;i++){const y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),a=i*2.39996;P.push([Math.cos(a)*r,y,Math.sin(a)*r])}
+ const labels=['jarvis · online','ultron · online','vault · locked','privacy · 1.00'];
+ function size(){D=Math.min(devicePixelRatio||1,2);W=c.width=innerWidth*D;H=c.height=c.offsetHeight*D;R=Math.min(W,H)*(innerWidth<700?.3:.2)}
+ size();addEventListener('resize',size);window.orbPulse=()=>{pulse=1};window.orbMode='standby';
+ let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+ function frame(){requestAnimationFrame(frame);if(!vis)return;
+  const m=window.orbMode,ts2=m==='thinking'?3.2:m==='speaking'?1.6:1,tg=m==='thinking'?1.5:m==='speaking'?1.3:1;spd+=(ts2-spd)*.05;glow+=(tg-glow)*.05;
+  t+=RM?0:.0042*spd;intro=Math.min(1,intro+.012);pulse*=.94;x.clearRect(0,0,W,H);
+  const talk=m==='speaking'&&!RM?Math.abs(Math.sin(t*40))*.035:0;
+  const cx=W/2,cy=H*(innerWidth<700?.33:.3),ry=t*1.6,rx=.35+Math.sin(t*.7)*.12,e=1-Math.pow(1-intro,3),rr=R*(.55+.45*e)*(1+pulse*.06+talk);
+  const g=x.createRadialGradient(cx,cy,0,cx,cy,rr*1.9);g.addColorStop(0,'rgba(255,170,60,'+(.16*glow)+')');g.addColorStop(1,'rgba(255,170,60,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+  const c1=Math.cos(ry),s1=Math.sin(ry),c2=Math.cos(rx),s2=Math.sin(rx),band=Math.sin(t*2.2);
+  for(const p of P){let X=p[0]*c1-p[2]*s1,Z=p[0]*s1+p[2]*c1,Y=p[1]*c2-Z*s2;Z=p[1]*s2+Z*c2;
+   const s=(Z+1.6)/2.6,a=(.2+.8*Math.max(0,(Z+1)/2))*e,hot=Math.abs(p[1]-band)<(m==='thinking'?.09:.05);
+   x.fillStyle=hot?'rgba(255,200,120,'+Math.min(1,a+.4)+')':'rgba(255,'+(170+Z*40|0)+','+(80+Z*60|0)+','+a+')';
+   const sz=(hot?2.1:1.5)*s*D;x.fillRect(cx+X*rr-sz/2,cy+Y*rr-sz/2,sz,sz)}
+  x.strokeStyle='rgba(255,181,71,'+(.28*e*glow)+')';x.lineWidth=D;x.beginPath();x.ellipse(cx,cy,rr*1.45,rr*.32,-.25,0,Math.PI*2);x.stroke();
+  const oa=t*3,ca=Math.cos(-.25),sa=Math.sin(-.25),ox=cx+Math.cos(oa)*rr*1.45*ca-Math.sin(oa)*rr*.32*sa,oy=cy+Math.cos(oa)*rr*1.45*sa+Math.sin(oa)*rr*.32*ca;
+  x.fillStyle='#ffd08a';x.beginPath();x.arc(ox,oy,2.6*D,0,7);x.fill();
+  x.font=(10*D)+'px JetBrains Mono, monospace';
+  labels.forEach((l,i)=>{const a=t*.5+i*Math.PI/2,bx=cx+Math.cos(a)*rr*.95,by=cy+Math.sin(a)*rr*.8,bw=16*D,k=(Math.sin(t*4+i*2)+1)/2;if(k<.25||intro<1)return;const al=(k-.25)/.75*.85;
+   x.strokeStyle='rgba(255,90,79,'+al+')';x.strokeRect(bx-bw/2,by-bw/2,bw,bw);x.fillStyle='rgba(255,90,79,'+al+')';x.fillText(l,bx+bw/2+6*D,by-bw/2+8*D)})}
+ frame()})();
+
+/* entrance */
+(()=>{const h=$('#title'),nodes=[...h.childNodes];h.innerHTML='';let k=0;
+ nodes.forEach(nd=>[...nd.textContent].forEach(ch=>{const sp=el('span','ch'+(nd.nodeType===1?' dot':''),ch);h.appendChild(sp);
+  if(sp.animate&&!RM)sp.animate([{opacity:0,transform:'translateY(105%) rotateX(-60deg)'},{opacity:1,transform:'none'}],{duration:1200,delay:600+k*45,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'});else sp.style.opacity=1;k++}));
+ requestAnimationFrame(()=>document.body.classList.add('ready'));
+ const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.08});
+ document.querySelectorAll('.rv').forEach(e=>io.observe(e))})();
+</script>
+</body>
+</html>

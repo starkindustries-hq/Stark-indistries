@@ -467,6 +467,7 @@ html.orbit-open .sjg{right:auto;left:max(16px,env(safe-area-inset-left,0px));tra
       <button data-m="p2"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#73f9d1"></em>Stark Orbit</span><span>Satellite tracker</span></button>
       <button data-m="fd"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">Founders</span><span>Binit · Mridul</span></button>
       <button data-m="faq"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)">How to use</span><span>Guide &amp; FAQ</span></button>
+      <button data-m="edith"><span style="font:inherit;letter-spacing:inherit;color:var(--fg)"><em style="background:#ffb547"></em>E.D.I.T.H.</span><span>Support agent</span></button>
     </div>
     <div class="p-ctas" style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="pill solid" data-m="gj">Get Jarvis app</button><button class="pill ult" data-m="gu">Get Ultron app</button></div>
   </div>
@@ -843,7 +844,7 @@ function openMenu(){closeSheet();closeFaq();closeFd();menuOpen=true;sheetOpen=tr
 function closeMenu(){if(!menuOpen)return;menuOpen=false;sheetOpen=false;$('scrim').classList.remove('on');$('menuSheet').classList.remove('on');$('menuSheet').setAttribute('aria-hidden','true')}
 $('menuBtn').onclick=openMenu;$('menuX').onclick=closeMenu;$('scrim').addEventListener('click',closeMenu);
 document.querySelectorAll('#menuSheet [data-m]').forEach(b=>b.onclick=()=>{const m=b.dataset.m;closeMenu();
-  setTimeout(()=>{if(m[0]==='p')toProd(+m[1]);else if(m==='fd')openFd();else if(m==='faq')openFaq();else if(m==='gj')openSheet('jarvis');else if(m==='gu')openSheet('ultron')},250)});$('faqX').onclick=closeFaq;$('scrim').addEventListener('click',closeFaq);
+  setTimeout(()=>{if(m[0]==='p')toProd(+m[1]);else if(m==='fd')openFd();else if(m==='faq')openFaq();else if(m==='gj')openSheet('jarvis');else if(m==='gu')openSheet('ultron');else if(m==='edith')location.href='edith.html'},250)});$('faqX').onclick=closeFaq;$('scrim').addEventListener('click',closeFaq);
 /* one small API for the site guide (Jarvis) to drive the page */
 window.__SI={sheet:k=>{closeFd();closeFaq();openSheet(k)},faq:()=>{closeFd();openFaq()},founders:openFd,close:()=>{closeSheet();closeFaq();closeFd()},
   prod:i=>{closeSheet();closeFaq();closeFd();mode==='prod'?go(i):toProd(i)},hero:()=>{closeSheet();closeFaq();closeFd();toHero()},orbit:openOrbitHost,
