@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><defs>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+ <stop offset="0" stop-color="#ffffff"/><stop offset="0.28" stop-color="#aab4c2"/><stop offset="0.5" stop-color="#f4f7fb"/>
+ <stop offset="0.72" stop-color="#7d8797"/><stop offset="1" stop-color="#e6ebf2"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
+ <stop offset="0" stop-color="#0a5cff"/><stop offset="0.6" stop-color="#1fa8ff"/><stop offset="1" stop-color="#7fe3ff"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/>
+ <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<radialGradient id="bg" cx="0.5" cy="0.42" r="0.75"><stop offset="0" stop-color="#0d1c33"/><stop offset="0.55" stop-color="#071122"/><stop offset="1" stop-color="#03070f"/></radialGradient>
+<linearGradient id="word" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.55" stop-color="#c9d1dc"/><stop offset="1" stop-color="#8e98a8"/></linearGradient>
+<linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1fa8ff" stop-opacity="0"/><stop offset="0.5" stop-color="#3fd2ff"/><stop offset="1" stop-color="#1fa8ff" stop-opacity="0"/></linearGradient>
+</defs><rect width="1024" height="1024" rx="228" fill="url(#bg)"/><g transform="translate(512,512) scale(3.3)"><polyline points="0.00,-100.00 -86.60,-50.00 -86.60,50.00 0.00,100.00 86.60,50.00 86.60,-22.00" fill="none" stroke="#f2f5f9" stroke-width="16" stroke-linejoin="miter"/><polyline points="86.60,-22.00 86.60,-50.00 0.00,-100.00" fill="none" stroke="#1fa8ff" stroke-width="16" stroke-linejoin="miter"/><g transform="scale(1.18)"><path d="M 78,-40 Q 8,-31 -14,-15 Q -27,-5 -34,9 L 6,4 Q 2,-14 78,-40 Z" fill="#f2f5f9"/><path d="M 6,4 L 68,-5 Q 12,12 -86,50 Q -30,23 6,4 Z" fill="#1fa8ff"/></g></g></svg>

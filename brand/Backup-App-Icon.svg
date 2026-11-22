@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024"><defs>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+ <stop offset="0" stop-color="#ffffff"/><stop offset="0.28" stop-color="#aab4c2"/><stop offset="0.5" stop-color="#f4f7fb"/>
+ <stop offset="0.72" stop-color="#7d8797"/><stop offset="1" stop-color="#e6ebf2"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
+ <stop offset="0" stop-color="#0a5cff"/><stop offset="0.6" stop-color="#1fa8ff"/><stop offset="1" stop-color="#7fe3ff"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/>
+ <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<radialGradient id="bg" cx="0.5" cy="0.42" r="0.75"><stop offset="0" stop-color="#0d1c33"/><stop offset="0.55" stop-color="#071122"/><stop offset="1" stop-color="#03070f"/></radialGradient>
+<linearGradient id="word" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.55" stop-color="#c9d1dc"/><stop offset="1" stop-color="#8e98a8"/></linearGradient>
+<linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1fa8ff" stop-opacity="0"/><stop offset="0.5" stop-color="#3fd2ff"/><stop offset="1" stop-color="#1fa8ff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1024" height="1024" rx="228" fill="url(#bg)"/>
+<g transform="translate(512,512) scale(3.3)"><polyline points="-72.74,-58.00 -86.60,-50.00 -86.60,36.00" fill="none" stroke="#f2f5f9" stroke-width="15" stroke-linejoin="miter" stroke-linecap="butt"/>
+<polyline points="-67.55,61.00 0.00,100.00 53.69,69.00" fill="none" stroke="#f2f5f9" stroke-width="15" stroke-linejoin="miter" stroke-linecap="butt"/>
+<polyline points="74.48,57.00 86.60,50.00 86.60,-38.00" fill="none" stroke="#f2f5f9" stroke-width="15" stroke-linejoin="miter" stroke-linecap="butt"/>
+<polyline points="77.94,-55.00 0.00,-100.00 -45.03,-74.00" fill="none" stroke="#f2f5f9" stroke-width="15" stroke-linejoin="miter" stroke-linecap="butt"/>
+<polyline points="-50.23,-71.00 -69.28,-60.00" fill="none" stroke="#1fa8ff" stroke-width="15" stroke-linecap="butt"/>
+<polyline points="57.16,67.00 71.01,59.00" fill="none" stroke="#1fa8ff" stroke-width="15" stroke-linecap="butt"/>
+<path d="M 84,-48 Q 22,-32 -30,-11 L -62,4 L -18,4 Q 24,-16 84,-48 Z" fill="#f2f5f9"/>
+<path d="M -62,4 L -24,-7 L 68,0 L -24,13 Z" fill="#f2f5f9"/>
+<path d="M 68,0 Q 6,22 -86,54 Q -8,44 22,24 Q 44,12 68,0 Z" fill="#1fa8ff"/></g></svg>
